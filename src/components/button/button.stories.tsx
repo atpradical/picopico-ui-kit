@@ -48,6 +48,14 @@ export const Link: Story = {
   },
 }
 
+export const Danger: Story = {
+  args: {
+    children: 'Danger Button',
+    disabled: false,
+    variant: 'danger',
+  },
+}
+
 export const FullWidth: Story = {
   args: {
     children: 'Full Width Button',

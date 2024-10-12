@@ -1,24 +1,15 @@
 {
   "name": "@atpradical/picopico-ui-kit",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
-      }
-    },
-    "./style.css": "./dist/style.css"
-  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "dist/styles.css"
+  ],
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "vite build && tsc",
@@ -26,7 +17,6 @@
     "lint": "eslint src .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "lint:fix": "eslint . --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {

@@ -4,6 +4,8 @@ import clsx from 'clsx'
 
 import styles from './Button.module.scss'
 
+type InferType<T> = T extends ElementType<infer U> ? U : never
+
 export type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
   fullWidth?: boolean
@@ -11,10 +13,7 @@ export type ButtonProps<T extends ElementType = 'button'> = {
 } & ComponentPropsWithoutRef<T>
 
 export const Button = forwardRef(
-  <T extends ElementType = 'button'>(
-    props: ButtonProps<T>,
-    ref: ForwardedRef<HTMLButtonElement>
-  ) => {
+  <T extends ElementType = 'button'>(props: ButtonProps<T>, ref: ForwardedRef<InferType<T>>) => {
     const {
       as: Component = 'button',
       className,

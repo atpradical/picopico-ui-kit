@@ -1,0 +1,14 @@
+.card {
+  padding: var(--padding-card-standard);
+  width: 100%;
+  border-radius: var(--border-radius-xs);
+}
+
+.default {
+  background-color: var(--color-dark-500);
+  border: var(--border-size-standard) solid var(--color-dark-300);
+}
+
+.transparent {
+  background-color: rgb(51 51 51 / 50%);
+}

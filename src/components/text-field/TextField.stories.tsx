@@ -35,7 +35,6 @@ const meta = {
         },
       },
     },
-
     placeholder: {
       control: { type: 'text' },
       table: {

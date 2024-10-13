@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
 
   padding: var(--padding-button-standard);
 
@@ -64,16 +65,26 @@
   border: var(--border-size-standard) solid var(--color-accent-500);
 }
 
+.icon,
 .link {
   padding: 0;
 }
 
 .outlined,
 .nb-outlined,
+.link {
+  color: var(--color-accent-500);
+}
+
 .link,
 .icon {
-  color: var(--color-accent-500);
+  color: var(--color-light-100);
+}
 
+.outlined,
+.nb-outlined,
+.link,
+.icon {
   &:hover {
     color: var(--color-accent-100);
     border-color: var(--color-accent-100);

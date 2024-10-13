@@ -6,13 +6,28 @@ import '@fontsource/inter/700.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/700.css'
 import '/src/styles/index.scss'
+import { fn } from '@storybook/test'
+import { themes } from '@storybook/theming'
 
 const preview: Preview = {
   parameters: {
+    actions: { onClick: fn() },
+    docs: {
+      theme: themes.dark,
+    },
+    backgrounds: {
+      default: 'dark',
+      values: [
+        {
+          name: 'dark',
+          value: '#000000',
+        },
+      ],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i,
+        date: /Date$/,
       },
     },
   },

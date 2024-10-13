@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './Button'
+import { ArrowBackOutlineIcon, BellOutlineIcon } from '../../icons'
 
 const meta = {
   argTypes: {
@@ -72,6 +73,14 @@ export const Outlined: Story = {
   },
 }
 
+export const NBOutlined: Story = {
+  name: 'Outlined w/out border',
+  args: {
+    children: 'Outlined button w/out border',
+    variant: 'nb-outlined',
+  },
+}
+
 export const Danger: Story = {
   args: {
     children: 'Danger button',
@@ -93,18 +102,22 @@ export const Link: Story = {
     variant: 'link',
   },
 }
-//todo: add some icon
+
 export const ButtonWithIcon: Story = {
   args: {
-    children: 'Button with icon',
+    children: (
+      <>
+        <ArrowBackOutlineIcon />
+        Button with icon
+      </>
+    ),
     variant: 'link',
   },
 }
 
-//todo: add some icon
 export const IconAsButton: Story = {
   args: {
-    children: 'Icon as button',
+    children: <BellOutlineIcon />,
     variant: 'icon',
   },
 }

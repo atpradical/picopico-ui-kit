@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef, ElementType, ForwardedRef, forwardRef } from 
 
 import clsx from 'clsx'
 
-import styles from './Button.module.scss'
+import s from './Button.module.scss'
 
 type InferType<T> = T extends ElementType<infer U> ? U : never
 
@@ -22,7 +22,7 @@ export const Button = forwardRef(
       variant = 'primary',
       ...rest
     } = props
-    const cn = clsx(styles.button, styles[variant], fullWidth && styles.fullWidth, className)
+    const cn = clsx(s.button, s[variant], fullWidth && s.fullWidth, className)
 
     return <Component className={cn} ref={ref} type={type} {...rest} />
   }

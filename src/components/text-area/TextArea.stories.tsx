@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
+
 import { TextArea } from './TextArea'
 
 const meta = {
@@ -9,6 +10,16 @@ const meta = {
         defaultValue: { summary: 'false' },
         type: {
           summary: 'boolean',
+        },
+      },
+    },
+    error: {
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: {
+          summary: 'string',
         },
       },
     },
@@ -23,14 +34,6 @@ const meta = {
         },
       },
     },
-    placeholder: {
-      control: { type: 'text' },
-      table: {
-        type: {
-          summary: 'string',
-        },
-      },
-    },
     label: {
       table: {
         type: {
@@ -38,10 +41,8 @@ const meta = {
         },
       },
     },
-    error: {
-      control: {
-        type: 'text',
-      },
+    placeholder: {
+      control: { type: 'text' },
       table: {
         type: {
           summary: 'string',
@@ -58,19 +59,19 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  name: 'TextArea',
   args: {
     label: 'Some text-area label',
     placeholder: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.',
   },
+  name: 'TextArea',
 }
 
 export const TextAreaWithError: Story = {
-  name: 'TextArea with error',
   args: {
     error: 'Some error occurred...',
     isRequired: true,
     label: 'Some text-area label',
     placeholder: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.',
   },
+  name: 'TextArea with error',
 }

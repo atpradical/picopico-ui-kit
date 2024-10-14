@@ -1,1 +1,1 @@
-export * from './Color-pallet.tsx'
+export * from './Color-pallet'

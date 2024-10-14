@@ -7,9 +7,11 @@ import {
   useId,
   useState,
 } from 'react'
+
 import { Button, Typography } from '@/components'
 import { CloseOutlineIcon, EyeOffOutlineIcon, EyeOutlineIcon, SearchOutlineIcon } from '@/icons'
 import clsx from 'clsx'
+
 import s from './TextField.module.scss'
 
 export type TextFieldProps = {

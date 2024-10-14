@@ -1,9 +1,10 @@
 import { ComponentPropsWithoutRef } from 'react'
 
+import { Card, Typography } from '@/components'
+
 import s from './Iconography.module.scss'
 
 import { Icon } from './iconography.mock'
-import { Card, Typography } from '@/components'
 
 type iconListProps = {
   icons: Icon[]

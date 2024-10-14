@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
+
 import { Card } from './Card'
 
 const meta = {
@@ -27,8 +28,8 @@ const meta = {
       table: {
         defaultValue: { summary: 'default' },
         type: {
-          summary: 'string',
           detail: `'default', 'transparent'`,
+          summary: 'string',
         },
       },
     },

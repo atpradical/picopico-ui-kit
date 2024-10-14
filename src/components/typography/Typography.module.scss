@@ -69,7 +69,7 @@
 }
 
 .badge {
-  @include typography(var(--font-size-xxxs), var(--line-height-xs), var(--font-weight-400));
+  @include typography(var(--font-size-xxs), var(--line-height-xs), var(--font-weight-400));
 }
 
 .grey {

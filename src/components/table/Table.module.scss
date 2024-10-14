@@ -1,0 +1,25 @@
+.table {
+  border-collapse: collapse;
+  color: var(--color-light-100);
+}
+
+.tableHead {
+  font-weight: var(--font-weight-600);
+}
+
+.cell {
+  font-weight: var(--font-weight-400);
+}
+
+.tableHead,
+.cell {
+  padding: var(--padding-cell-standard);
+}
+
+.header {
+  background-color: var(--color-dark-500);
+}
+
+.tableRow {
+  border: var(--border-size-standard) solid var(--color-dark-500);
+}

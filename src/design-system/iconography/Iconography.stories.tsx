@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
+import { Iconography } from './Iconography'
 import {
   browserIconsList,
   flagsIconsList,
@@ -7,7 +8,6 @@ import {
   paymentsIconsList,
   socialNetworksIconsList,
 } from './iconography.mock'
-import { Iconography } from './Iconography'
 
 const meta = {
   argTypes: {},

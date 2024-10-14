@@ -18,12 +18,12 @@ type TypographyProps<T extends ElementType = 'p'> = {
     | 'h3'
     | 'large'
     | 'medium_14'
-    | 'regular_link'
     | 'regular_14'
     | 'regular_16'
+    | 'regular_link'
     | 'semi-bold_small'
-    | 'small_link'
     | 'small'
+    | 'small_link'
 } & ComponentPropsWithoutRef<T>
 
 export const Typography = <T extends ElementType = 'p'>(props: TypographyProps<T>) => {

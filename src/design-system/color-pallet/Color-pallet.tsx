@@ -1,10 +1,11 @@
 import { ComponentPropsWithoutRef } from 'react'
+
+import { Card, Typography } from '@/components'
 import {
   ColorPallet,
   PalletCategory,
   PalletItem,
-} from '@/design-system/color-pallet/color-pallet.mock.ts'
-import { Card, Typography } from '@/components'
+} from '@/design-system/color-pallet/color-pallet.mock'
 
 import s from './Color-pallet.module.scss'
 
@@ -22,7 +23,7 @@ export const ColorPalette = ({ colors }: ColorPalletProps) => {
         const category = el as PalletCategory
         const categoryColors = colors[el as PalletCategory]
 
-        return <Pallet category={category} key={key} categoryColors={categoryColors} />
+        return <Pallet category={category} categoryColors={categoryColors} key={key} />
       })}
     </Card>
   )

@@ -1,8 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { Typography } from './Typography'
 
 const meta = {
   argTypes: {
+    as: {
+      control: { disable: true },
+      table: {
+        defaultValue: { summary: '<p/>' },
+        type: {
+          summary:
+            'Polymorphic prop that allows rendering the typography with a custom HTML tag while preserving predefined typography styles.',
+        },
+      },
+    },
     grey: {
       control: { type: 'boolean' },
       table: {
@@ -42,18 +53,8 @@ const meta = {
       table: {
         defaultValue: { summary: 'regular_14' },
         type: {
-          summary: 'string',
           detail: `'large', 'h', 'h2', 'h3', 'regular_16', 'bold_16', 'regular_14', 'medium_14', 'bold_14', 'small','semi-bold_small', 'regular_link', 'small_link','error',`,
-        },
-      },
-    },
-    as: {
-      control: { disable: true },
-      table: {
-        defaultValue: { summary: '<p/>' },
-        type: {
-          summary:
-            'Polymorphic prop that allows rendering the typography with a custom HTML tag while preserving predefined typography styles.',
+          summary: 'string',
         },
       },
     },

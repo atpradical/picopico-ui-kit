@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
+
 import { TextField } from './TextField'
 
 const meta = {
@@ -35,6 +36,13 @@ const meta = {
         },
       },
     },
+    label: {
+      table: {
+        type: {
+          summary: 'string',
+        },
+      },
+    },
     placeholder: {
       control: { type: 'text' },
       table: {
@@ -49,14 +57,7 @@ const meta = {
       table: {
         defaultValue: { summary: 'text' },
         type: {
-          summary: 'string',
           detail: `password', 'search', 'text`,
-        },
-      },
-    },
-    label: {
-      table: {
-        type: {
           summary: 'string',
         },
       },

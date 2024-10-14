@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 
-import s from './Iconography.module.scss'
 import {
   ArrowBackOutlineIcon,
   ArrowForwardOutlineIcon,
@@ -53,6 +52,8 @@ import {
   LayersOutlineIcon,
   LogOutIcon,
   LogOutOutlineIcon,
+  MSEdgeIcon,
+  MSExplorerIcon,
   MaximizeIcon,
   MaximizeOutlineIcon,
   MenuOutlineIcon,
@@ -62,8 +63,6 @@ import {
   MicOutlineIcon,
   MoreHorizontalIcon,
   MoreHorizontalOutlineIcon,
-  MSEdgeIcon,
-  MSExplorerIcon,
   OperaIcon,
   PaidIcon,
   PaperPlaneIcon,
@@ -101,6 +100,8 @@ import {
   UcBrowserIcon,
   YandexIcon,
 } from '@/icons'
+
+import s from './Iconography.module.scss'
 
 export type Icon = {
   component: ReactNode

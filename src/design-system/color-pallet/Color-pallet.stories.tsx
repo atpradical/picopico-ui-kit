@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+
 import { ColorPalette } from './Color-pallet'
 import { colors } from './color-pallet.mock'
 
@@ -12,6 +13,6 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Colors: Story = {
-  name: 'Color Palette',
   args: { colors: colors },
+  name: 'Color Palette',
 }

@@ -1,27 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from './Button'
 import { ArrowBackOutlineIcon, BellOutlineIcon } from '../../icons'
+import { Button } from './Button'
 
 const meta = {
   argTypes: {
-    variant: {
-      control: { type: 'inline-radio' },
-      options: ['primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon'],
+    as: {
+      control: { disable: true },
       table: {
-        defaultValue: { summary: 'primary' },
+        defaultValue: { summary: '<button/>' },
         type: {
-          summary: 'string',
-          detail: `primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon`,
-        },
-      },
-    },
-    fullWidth: {
-      control: { type: 'boolean' },
-      table: {
-        defaultValue: { summary: 'false' },
-        type: {
-          summary: 'boolean',
+          summary:
+            'Polymorphic prop that allows rendering the button with a custom HTML tag while preserving predefined button styles.',
         },
       },
     },
@@ -34,13 +24,23 @@ const meta = {
         },
       },
     },
-    as: {
-      control: { disable: true },
+    fullWidth: {
+      control: { type: 'boolean' },
       table: {
-        defaultValue: { summary: '<button/>' },
+        defaultValue: { summary: 'false' },
         type: {
-          summary:
-            'Polymorphic prop that allows rendering the button with a custom HTML tag while preserving predefined button styles.',
+          summary: 'boolean',
+        },
+      },
+    },
+    variant: {
+      control: { type: 'inline-radio' },
+      options: ['primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon'],
+      table: {
+        defaultValue: { summary: 'primary' },
+        type: {
+          detail: `primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon`,
+          summary: 'string',
         },
       },
     },
@@ -74,11 +74,11 @@ export const Outlined: Story = {
 }
 
 export const NBOutlined: Story = {
-  name: 'Outlined w/out border',
   args: {
     children: 'Outlined button w/out border',
     variant: 'nb-outlined',
   },
+  name: 'Outlined w/out border',
 }
 
 export const Danger: Story = {
@@ -89,11 +89,11 @@ export const Danger: Story = {
 }
 
 export const FullWidth: Story = {
-  name: 'FullWidth Button',
   args: {
     children: 'FullWidth button',
     fullWidth: true,
   },
+  name: 'FullWidth Button',
 }
 
 export const Link: Story = {

@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 import * as RDXT from '@radix-ui/react-tabs'
 import clsx from 'clsx'
 
-import s from './Tab.module.scss'
+import s from './Tabs.module.scss'
 
 type TabsRootProps = ComponentPropsWithoutRef<typeof RDXT.Root>
 type TabsRootRef = ElementRef<typeof RDXT.Root>

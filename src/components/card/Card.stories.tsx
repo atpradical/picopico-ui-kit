@@ -35,7 +35,6 @@ const meta = {
     },
   },
   component: Card,
-  tags: ['autodocs'],
   title: 'Components/Card',
 } satisfies Meta<typeof Card>
 

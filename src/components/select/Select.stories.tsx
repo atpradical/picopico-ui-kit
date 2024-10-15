@@ -43,7 +43,6 @@ const meta = {
     placeholder: 'choose options...',
   },
   component: Select,
-  tags: ['autodocs'],
   title: 'Components/Select',
 } satisfies Meta<typeof Select>
 

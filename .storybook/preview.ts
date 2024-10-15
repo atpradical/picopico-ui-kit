@@ -10,6 +10,7 @@ import { fn } from '@storybook/test'
 import { themes } from '@storybook/theming'
 
 const preview: Preview = {
+  tags: ['autodocs'],
   parameters: {
     actions: { onClick: fn() },
     docs: {

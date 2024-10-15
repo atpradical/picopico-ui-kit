@@ -30,8 +30,7 @@ const meta = {
     },
   },
   component: DatePickerRange,
-  tags: ['autodocs'],
-  title: 'Components/DatePicker/Range',
+  title: 'Components/DatePicker',
 } satisfies Meta<typeof DatePickerRange>
 
 export default meta

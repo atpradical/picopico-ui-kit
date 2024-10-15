@@ -26,7 +26,13 @@ const meta = {
     },
   },
   component: CustomToast,
-  tags: ['autodocs'],
+
+  parameters: {
+    docs: {
+      page: null, // Отключение автоматической генерации страницы документации
+    },
+    layout: 'padded',
+  },
   title: 'Components/Toast',
 } satisfies Meta<typeof CustomToast>
 

@@ -100,7 +100,6 @@ The component uses CSS modules for styling, allowing for easy customization and 
       },
     },
   },
-  tags: ['autodocs'],
   title: 'components/Checkbox',
 }
 

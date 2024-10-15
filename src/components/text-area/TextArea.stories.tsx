@@ -51,7 +51,6 @@ const meta = {
     },
   },
   component: TextArea,
-  tags: ['autodocs'],
   title: 'Components/TextArea',
 } satisfies Meta<typeof TextArea>
 

@@ -29,8 +29,7 @@ const meta = {
     },
   },
   component: DatePicker,
-  tags: ['autodocs'],
-  title: 'Components/DatePicker/Single',
+  title: 'Components/DatePicker',
 } satisfies Meta<typeof DatePicker>
 
 export default meta

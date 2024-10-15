@@ -6,7 +6,7 @@ import { colors } from './color-pallet.mock'
 const meta = {
   argTypes: {},
   component: ColorPalette,
-  title: 'Design System/Colors',
+  title: 'Design System/123/Colors',
 } satisfies Meta<typeof ColorPalette>
 
 export default meta

@@ -26,7 +26,6 @@ const descriptionMockText =
 const meta = {
   argTypes: {},
   component: DialogRoot,
-  tags: ['autodocs'],
   title: 'Components/Dialog',
 } satisfies Meta<typeof DialogRoot>
 

@@ -27,7 +27,7 @@ const meta = {
   },
   component: CustomToast,
   tags: ['autodocs'],
-  title: 'Primitives/Toast',
+  title: 'Components/Toast',
 } satisfies Meta<typeof CustomToast>
 
 export default meta

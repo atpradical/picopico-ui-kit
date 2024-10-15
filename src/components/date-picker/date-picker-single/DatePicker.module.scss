@@ -24,6 +24,11 @@
   }
 }
 
+.trigger {
+  border: none;
+  background-color: transparent;
+}
+
 .disabled {
   cursor: default;
   color: var(--color-light-900);

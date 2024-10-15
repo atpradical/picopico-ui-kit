@@ -55,7 +55,7 @@ export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangePro
             value={inputValue}
           />
           <Root onOpenChange={setIsOpen} open={isOpen}>
-            <Trigger disabled={disabled} id={id} title={'open calendar'}>
+            <Trigger className={s.trigger} disabled={disabled} id={id} title={'open calendar'}>
               {triggerIcon}
             </Trigger>
             <Portal>

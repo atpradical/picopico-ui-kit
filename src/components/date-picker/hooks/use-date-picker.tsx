@@ -30,7 +30,7 @@ export const useDatePicker = ({
   const triggerIcon = isOpen ? (
     <CalendarIcon className={iconCN} tabIndex={1} />
   ) : (
-    <CalendarOutlineIcon className={iconCN} />
+    <CalendarOutlineIcon className={iconCN} tabIndex={1} />
   )
 
   const inputSingleDateChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {

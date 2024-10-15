@@ -1,0 +1,166 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Design-System/Typography Set" />
+
+export const typography = {
+  type: {
+    primary: '"Inter", "Roboto", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    medium: '500',
+    semiBold: '600',
+    bold: '700',
+  },
+  size: {
+    xxl: 22,
+    xl: 20,
+    l: 18,
+    m: 16,
+    s: 14,
+    xs: 12,
+  },
+  lineHeight: {
+    xl: '36px',
+    m: '24px',
+    xs: '16px',
+  },
+};
+
+export const SampleText = 'Carosserie Test Zürich\nStauffacherstrasse 31\n8004 Zürich, ZH, CH';
+
+# Typography Set
+
+**Font:** Inter, Roboto
+
+**Weights:** 400(regular), 500(medium), 600(semi-bold), 700(bold)
+
+## Large
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.xxl]}
+  lineHeight={typography.lineHeight.xl}
+  sampleText={SampleText}
+/>
+
+## H1
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.xl]}
+  lineHeight={typography.lineHeight.xl}
+  sampleText={SampleText}
+/>
+
+## H2
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.l]}
+  lineHeight={typography.lineHeight.xl}
+  sampleText={SampleText}
+/>
+
+## H3
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.m]}
+  lineHeight={typography.lineHeight.xl}
+  sampleText={SampleText}
+/>
+
+## Regular Text 16
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.regular}
+  fontSizes={[typography.size.m]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Bold Text 16
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.m]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Regular Text 14
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.regular}
+  fontSizes={[typography.size.s]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Medium Text 14
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.medium}
+  fontSizes={[typography.size.s]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Bold Text 14
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.s]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Small Text
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.regular}
+  fontSizes={[typography.size.xs]}
+  lineHeight={typography.lineHeight.xs}
+  sampleText={SampleText}
+/>
+
+## Semi-bold Small Text
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.semiBold}
+  fontSizes={[typography.size.xs]}
+  lineHeight={typography.lineHeight.xs}
+  sampleText={SampleText}
+/>
+
+## Regular Link
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.regular}
+  fontSizes={[typography.size.s]}
+  lineHeight={typography.lineHeight.m}
+  sampleText={SampleText}
+/>
+
+## Small Link
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.regular}
+  fontSizes={[typography.size.xs]}
+  lineHeight={typography.lineHeight.xs}
+  sampleText={SampleText}
+/>

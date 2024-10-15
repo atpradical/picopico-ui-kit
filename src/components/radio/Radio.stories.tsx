@@ -36,7 +36,6 @@ const meta = {
     },
   },
   component: Radio,
-  tags: ['autodocs'],
   title: 'Components/RadioGroup',
 } satisfies Meta<typeof Radio>
 

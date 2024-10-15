@@ -46,7 +46,6 @@ const meta = {
     },
   },
   component: Button,
-  tags: ['autodocs'],
   title: 'Components/Button',
 } satisfies Meta<typeof Button>
 

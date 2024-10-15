@@ -4,7 +4,6 @@ import { TabsContent, TabsList, TabsRoot, TabsTrigger } from './Tabs'
 
 const meta = {
   component: TabsRoot,
-  tags: ['autodocs'],
   title: 'components/Tabs',
 } satisfies Meta<typeof TabsRoot>
 

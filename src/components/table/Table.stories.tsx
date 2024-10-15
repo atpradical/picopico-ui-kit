@@ -4,7 +4,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 
 const meta = {
   component: Table,
-  tags: ['autodocs'],
   title: 'Components/Table',
 } satisfies Meta<typeof Table>
 

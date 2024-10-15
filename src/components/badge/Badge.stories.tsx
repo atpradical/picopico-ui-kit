@@ -29,7 +29,6 @@ const meta = {
     },
   },
   component: Badge,
-  tags: ['autodocs'],
   title: 'Components/Badge',
 } satisfies Meta<typeof Badge>
 

@@ -63,7 +63,6 @@ const meta = {
     children: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.',
   },
   component: Typography,
-  tags: ['autodocs'],
   title: 'Components/Typography',
 } satisfies Meta<typeof Typography>
 

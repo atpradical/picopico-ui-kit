@@ -1,4 +1,5 @@
 import './styles/index.scss'
+import './styles/_toastify.scss'
 
 export * from './components'
 export * from './design-system'

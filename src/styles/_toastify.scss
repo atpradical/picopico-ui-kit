@@ -3,17 +3,18 @@
 }
 
 .Toastify__toast-container {
-  padding: 0;
   width: 100%;
   max-width: 380px;
+  padding: 0;
 }
 
 .Toastify__toast {
-  background-color: transparent;
-  margin: 5px;
-  padding: 0;
   width: 100%;
   max-width: 380px;
+  margin: 5px;
+  padding: 0;
+
+  background-color: transparent;
   border-radius: var(--border-radius-xs);
 }
 

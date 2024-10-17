@@ -11,7 +11,7 @@ import s from '../date-picker-single/DatePicker.module.scss'
 
 export type DatePickerRangeProps = {
   disabled?: boolean
-  error?: string
+  errorText?: string
   isRequired?: boolean
   label?: string
   locale?: Locale
@@ -22,7 +22,7 @@ export type DatePickerRangeProps = {
 type DatePickerRangeRef = ElementRef<typeof TextField>
 
 export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangeProps>(
-  ({ disabled, error, isRequired, label, onSelectRangeDate, selected, ...rest }, ref) => {
+  ({ disabled, errorText, isRequired, label, onSelectRangeDate, selected, ...rest }, ref) => {
     const {
       dayPickerRangeHandler,
       id,
@@ -35,7 +35,7 @@ export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangePro
       triggerIcon,
     } = useDatePicker({
       disabled,
-      error,
+      errorText,
       onSelectRangeDate,
     })
 
@@ -47,9 +47,9 @@ export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangePro
         <div className={s.inputContainer}>
           <TextField
             autoComplete={'off'}
-            className={clsx(error && s.error)}
+            className={clsx(errorText && s.error)}
             disabled={disabled}
-            error={error}
+            errorText={errorText}
             onChange={inputRangeDateChangeHandler}
             ref={ref}
             value={inputValue}

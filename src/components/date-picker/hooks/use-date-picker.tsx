@@ -9,14 +9,14 @@ import s from '../date-picker-single/DatePicker.module.scss'
 
 type UseDatePickerArgs = {
   disabled?: boolean
-  error?: string
+  errorText?: string
   onSelectRangeDate?: (date: DateRange | undefined) => void
   onSelectSingleDate?: (date: Date | undefined) => void
 }
 
 export const useDatePicker = ({
   disabled,
-  error,
+  errorText,
   onSelectRangeDate,
   onSelectSingleDate,
 }: UseDatePickerArgs) => {
@@ -25,7 +25,7 @@ export const useDatePicker = ({
   const [inputValue, setInputValue] = useState('')
   const id = useId()
 
-  const iconCN = clsx(s.icon, error && s.error, disabled && s.disabled)
+  const iconCN = clsx(s.icon, errorText && s.error, disabled && s.disabled)
 
   const triggerIcon = isOpen ? (
     <CalendarIcon className={iconCN} tabIndex={1} />

@@ -6,8 +6,8 @@ import { TOASTER_AUTO_CLOSE_DELAY } from '@/constants'
 import { CloseOutlineIcon } from '@/icons'
 import clsx from 'clsx'
 
-import '@/styles/_toastify.scss'
 import 'react-toastify/dist/ReactToastify.css'
+import '@/styles/_toastify.scss'
 
 import s from './Toast.module.scss'
 

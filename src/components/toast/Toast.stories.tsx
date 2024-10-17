@@ -50,6 +50,7 @@ export const DefaultStory: Story = {
 
     return (
       <div>
+        {'import {CustomToastContainer} from "@atpradical/picopico-ui-kit";'}
         <Button onClick={invokeToast} variant={'icon'}>
           <MoreHorizontalOutlineIcon height={24} width={24} />
         </Button>

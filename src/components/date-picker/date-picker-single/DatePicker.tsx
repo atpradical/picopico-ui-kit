@@ -10,7 +10,7 @@ import s from './DatePicker.module.scss'
 
 export type DatePickerProps = {
   disabled?: boolean
-  error?: string
+  errorText?: string
   isRequired?: boolean
   label?: string
   locale?: Locale
@@ -21,7 +21,7 @@ export type DatePickerProps = {
 type DatePickerRef = ElementRef<typeof TextField>
 
 export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
-  ({ disabled, error, isRequired, label, onSelectSingleDate, selected, ...rest }, ref) => {
+  ({ disabled, errorText, isRequired, label, onSelectSingleDate, selected, ...rest }, ref) => {
     const {
       dayPickerSingleHandler,
       id,
@@ -34,7 +34,7 @@ export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
       triggerIcon,
     } = useDatePicker({
       disabled,
-      error,
+      errorText,
       onSelectSingleDate,
     })
 
@@ -46,9 +46,9 @@ export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
         <div className={s.inputContainer}>
           <TextField
             autoComplete={'off'}
-            className={clsx(error && s.error)}
+            className={clsx(errorText && s.error)}
             disabled={disabled}
-            error={error}
+            errorText={errorText}
             onChange={inputSingleDateChangeHandler}
             ref={ref}
             value={inputValue}

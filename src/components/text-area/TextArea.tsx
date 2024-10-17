@@ -5,16 +5,16 @@ import { clsx } from 'clsx'
 
 import s from './TextArea.module.scss'
 
-type TextAreaProps = {
-  error?: string
+export type TextAreaProps = {
+  errorText?: string
   isRequired?: boolean
   label?: string
 } & ComponentPropsWithoutRef<'textarea'>
 
-type TextEreaRef = ElementRef<'textarea'>
+type TextAreaRef = ElementRef<'textarea'>
 
-export const TextArea = forwardRef<TextEreaRef, TextAreaProps>((props, ref) => {
-  const { className, disabled, error, isRequired, label, ...rest } = props
+export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
+  const { className, disabled, errorText, isRequired, label, ...rest } = props
   const id = useId()
 
   return (
@@ -31,14 +31,14 @@ export const TextArea = forwardRef<TextEreaRef, TextAreaProps>((props, ref) => {
         </Typography>
       )}
       <textarea
-        className={clsx(s.textarea, disabled && s.disabled, !!error && s.error, className)}
+        className={clsx(s.textarea, disabled && s.disabled, !!errorText && s.error, className)}
         id={id}
         ref={ref}
         {...rest}
       />
-      {!!error && (
+      {!!errorText && (
         <Typography className={s.errorText} variant={'error'}>
-          {error}
+          {errorText}
         </Typography>
       )}
     </div>

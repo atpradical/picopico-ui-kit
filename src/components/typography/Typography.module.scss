@@ -66,8 +66,6 @@
 
 .error {
   @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
-
-  color: var(--color-danger-500);
 }
 
 .badge {

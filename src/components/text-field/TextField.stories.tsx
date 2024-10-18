@@ -15,7 +15,7 @@ const meta = {
         },
       },
     },
-    error: {
+    errorText: {
       control: {
         type: 'text',
       },
@@ -96,7 +96,7 @@ export const Search: Story = {
 
 export const TextWithError: Story = {
   args: {
-    error: 'Some error occurred...',
+    errorText: 'Some error occurred...',
     isRequired: true,
     label: 'Some text-field label',
     placeholder: 'type something...',

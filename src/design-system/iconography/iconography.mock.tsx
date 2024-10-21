@@ -18,6 +18,7 @@ import {
   CalendarIcon,
   CalendarOutlineIcon,
   CheckmarkOutlineIcon,
+  ChromeIcon,
   CloseIcon,
   CloseOutlineIcon,
   ColorPaletteOutlineIcon,
@@ -203,6 +204,7 @@ export const iconsList: Icon[] = [
 export const browserIconsList: Icon[] = [
   { component: <BraveIcon className={s.icon} />, name: 'Brave' },
   { component: <MSExplorerIcon className={s.icon} />, name: 'MS Explorer' },
+  { component: <ChromeIcon className={s.icon} />, name: 'Chrome' },
   { component: <FirefoxIcon className={s.icon} />, name: 'Firefox' },
   { component: <MSEdgeIcon className={s.icon} />, name: 'MS Edge' },
   { component: <OperaIcon className={s.icon} />, name: 'Opera' },

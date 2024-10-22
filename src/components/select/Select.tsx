@@ -45,32 +45,34 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
     ))
 
     return (
-      <RDXS.Root
-        defaultValue={defaultValue}
-        disabled={disabled}
-        onValueChange={onValueChange}
-        value={value}
-        {...rest}
-      >
-        {label && (
-          <Typography as={'label'} className={clsx(disabled && s.disabled)} grey>
-            {label}
-          </Typography>
-        )}
-        <RDXS.Trigger className={clsx(s.trigger, className)} ref={ref}>
-          <RDXS.Value placeholder={placeholder} />
-          <RDXS.Icon asChild>
-            <ArrowIosDownOutlineIcon className={s.icon} />
-          </RDXS.Icon>
-        </RDXS.Trigger>
-        <RDXS.Portal>
-          <RDXS.Content className={s.content} position={'popper'}>
-            <RDXS.Viewport>
-              <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
-            </RDXS.Viewport>
-          </RDXS.Content>
-        </RDXS.Portal>
-      </RDXS.Root>
+      <div>
+        <RDXS.Root
+          defaultValue={defaultValue}
+          disabled={disabled}
+          onValueChange={onValueChange}
+          value={value}
+          {...rest}
+        >
+          {label && (
+            <Typography as={'label'} className={clsx(disabled && s.disabled)} grey>
+              {label}
+            </Typography>
+          )}
+          <RDXS.Trigger className={clsx(s.trigger, className)} ref={ref}>
+            <RDXS.Value placeholder={placeholder} />
+            <RDXS.Icon asChild>
+              <ArrowIosDownOutlineIcon className={s.icon} />
+            </RDXS.Icon>
+          </RDXS.Trigger>
+          <RDXS.Portal>
+            <RDXS.Content className={s.content} position={'popper'}>
+              <RDXS.Viewport>
+                <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
+              </RDXS.Viewport>
+            </RDXS.Content>
+          </RDXS.Portal>
+        </RDXS.Root>
+      </div>
     )
   }
 )

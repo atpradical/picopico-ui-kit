@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Card } from '../card'
 import { Avatar } from './Avatar'
 
 const meta = {
@@ -16,6 +15,7 @@ const meta = {
         },
       },
     },
+    // todo: update args with 'showFallback'
   },
   args: {
     name: 'User Name',
@@ -31,11 +31,4 @@ export type Story = StoryObj<typeof meta>
 
 export const DefaultStory: Story = {
   name: 'Avatar',
-  render: args => {
-    return (
-      <Card>
-        <Avatar {...args} />
-      </Card>
-    )
-  },
 }

@@ -18,7 +18,6 @@ type UseDatePickerArgs = {
 
 export const useDatePicker = ({
   defaultValue,
-  defaultValueRange,
   disabled,
   errorText,
   onSelectRangeDate,
@@ -32,9 +31,7 @@ export const useDatePicker = ({
   useEffect(() => {
     if (defaultValue) {
       dayPickerSingleHandler(defaultValue)
-    }
-    if (defaultValueRange) {
-      dayPickerRangeHandler(defaultValueRange)
+      setInputValue(defaultValue.toLocaleDateString())
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

@@ -10,7 +10,6 @@ import clsx from 'clsx'
 import s from '../date-picker-single/DatePicker.module.scss'
 
 export type DatePickerRangeProps = {
-  defaultValueRange?: DateRange
   disabled?: boolean
   errorText?: string
   isRequired?: boolean
@@ -23,19 +22,7 @@ export type DatePickerRangeProps = {
 type DatePickerRangeRef = ElementRef<typeof TextField>
 
 export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangeProps>(
-  (
-    {
-      defaultValueRange,
-      disabled,
-      errorText,
-      isRequired,
-      label,
-      onSelectRangeDate,
-      selected,
-      ...rest
-    },
-    ref
-  ) => {
+  ({ disabled, errorText, isRequired, label, onSelectRangeDate, selected, ...rest }, ref) => {
     const {
       dayPickerRangeHandler,
       id,
@@ -47,7 +34,6 @@ export const DatePickerRange = forwardRef<DatePickerRangeRef, DatePickerRangePro
       setMonth,
       triggerIcon,
     } = useDatePicker({
-      defaultValueRange,
       disabled,
       errorText,
       onSelectRangeDate,

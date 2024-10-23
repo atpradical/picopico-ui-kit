@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import s from './DatePicker.module.scss'
 
 export type DatePickerProps = {
+  defaultValue?: Date
   disabled?: boolean
   errorText?: string
   isRequired?: boolean
@@ -21,7 +22,10 @@ export type DatePickerProps = {
 type DatePickerRef = ElementRef<typeof TextField>
 
 export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
-  ({ disabled, errorText, isRequired, label, onSelectSingleDate, selected, ...rest }, ref) => {
+  (
+    { defaultValue, disabled, errorText, isRequired, label, onSelectSingleDate, selected, ...rest },
+    ref
+  ) => {
     const {
       dayPickerSingleHandler,
       id,
@@ -33,6 +37,7 @@ export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
       setMonth,
       triggerIcon,
     } = useDatePicker({
+      defaultValue,
       disabled,
       errorText,
       onSelectSingleDate,

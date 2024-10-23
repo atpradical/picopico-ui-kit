@@ -12,7 +12,7 @@ const meta = {
         type: 'boolean',
       },
     },
-    error: {
+    errorText: {
       control: {
         type: 'text',
       },

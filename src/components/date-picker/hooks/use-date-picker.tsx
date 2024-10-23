@@ -1,4 +1,4 @@
-import { ChangeEvent, useId, useState } from 'react'
+import { ChangeEvent, useEffect, useId, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 
 import { CalendarIcon, CalendarOutlineIcon } from '@/icons'
@@ -8,6 +8,8 @@ import { format, isValid, parse } from 'date-fns'
 import s from '../date-picker-single/DatePicker.module.scss'
 
 type UseDatePickerArgs = {
+  defaultValue?: Date
+  defaultValueRange?: DateRange
   disabled?: boolean
   errorText?: string
   onSelectRangeDate?: (date: DateRange | undefined) => void
@@ -15,6 +17,8 @@ type UseDatePickerArgs = {
 }
 
 export const useDatePicker = ({
+  defaultValue,
+  defaultValueRange,
   disabled,
   errorText,
   onSelectRangeDate,
@@ -24,6 +28,16 @@ export const useDatePicker = ({
   const [month, setMonth] = useState(new Date())
   const [inputValue, setInputValue] = useState('')
   const id = useId()
+
+  useEffect(() => {
+    if (defaultValue) {
+      dayPickerSingleHandler(defaultValue)
+    }
+    if (defaultValueRange) {
+      dayPickerRangeHandler(defaultValueRange)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const iconCN = clsx(s.icon, errorText && s.error, disabled && s.disabled)
 
@@ -63,7 +77,7 @@ export const useDatePicker = ({
     }
   }
 
-  const dayPickerSingleHandler = (date: Date | undefined) => {
+  function dayPickerSingleHandler(date: Date | undefined) {
     if (!date) {
       setInputValue('')
       onSelectSingleDate?.(undefined)
@@ -74,7 +88,7 @@ export const useDatePicker = ({
     setIsOpen(false)
   }
 
-  const dayPickerRangeHandler = (date: DateRange | undefined) => {
+  function dayPickerRangeHandler(date: DateRange | undefined) {
     if (!date) {
       setInputValue('')
       onSelectRangeDate?.(undefined)

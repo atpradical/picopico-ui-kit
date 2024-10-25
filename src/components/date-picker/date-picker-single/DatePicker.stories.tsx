@@ -54,6 +54,7 @@ export const DatePickerStoryEN: Story = {
 
 export const DatePickerStoryRU: Story = {
   args: {
+    defaultValue: new Date('2024-10-31T00:00:00.000Z'),
     label: 'DatePicker label',
     locale: ru,
     onSelectSingleDate: () => {},
@@ -64,6 +65,8 @@ export const DatePickerStoryRU: Story = {
     // remove onSelectSingleDate from args to avoid passing it to DatePicker for storybook
     const { onSelectSingleDate, ...rest } = args
     const [selectedDate, setSelectedDate] = useState<Date | undefined>()
+
+    console.log(selectedDate)
 
     return <DatePicker onSelectSingleDate={setSelectedDate} selected={selectedDate} {...rest} />
   },

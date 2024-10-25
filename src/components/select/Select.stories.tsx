@@ -53,6 +53,11 @@ const selectItems: OptionsValue[] = [
   { option: 'apple', value: 'apple' },
   { option: 'banana', value: 'banana' },
   { option: 'orange', value: 'orange' },
+  { option: 'mango', value: 'mango' },
+  { option: 'coconut', value: 'coconut' },
+  { option: 'tomato', value: 'tomato' },
+  { option: 'grape', value: 'grape' },
+  { option: 'pineapple', value: 'pineapple' },
 ]
 
 const selectItemsWithIcons: OptionsValue[] = [

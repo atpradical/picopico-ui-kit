@@ -17,6 +17,7 @@ export type SelectProps = {
   label?: string
   options?: OptionsValue[]
   placeholder?: string
+  showScroll?: boolean
 } & ComponentPropsWithoutRef<typeof RDXS.Root>
 export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
   (
@@ -28,6 +29,7 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
       onValueChange,
       options = [],
       placeholder,
+      showScroll = false,
       value,
       ...rest
     },
@@ -66,12 +68,18 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
           </RDXS.Trigger>
           <RDXS.Portal>
             <RDXS.Content className={s.content} position={'popper'}>
-              <ScrollArea className={s.scrollAreaRoot}>
+              {showScroll ? (
+                <ScrollArea className={s.scrollAreaRoot}>
+                  <RDXS.Viewport>
+                    <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
+                  </RDXS.Viewport>
+                  <ScrollBar />
+                </ScrollArea>
+              ) : (
                 <RDXS.Viewport>
                   <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
                 </RDXS.Viewport>
-                <ScrollBar />
-              </ScrollArea>
+              )}
             </RDXS.Content>
           </RDXS.Portal>
         </RDXS.Root>

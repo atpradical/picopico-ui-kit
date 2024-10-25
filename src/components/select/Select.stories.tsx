@@ -68,6 +68,7 @@ const selectItemsWithIcons: OptionsValue[] = [
 export const Default: Story = {
   args: {
     options: selectItems,
+    showScroll: true,
   },
 }
 

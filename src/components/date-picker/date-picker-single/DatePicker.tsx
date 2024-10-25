@@ -9,7 +9,7 @@ import clsx from 'clsx'
 import s from './DatePicker.module.scss'
 
 export type DatePickerProps = {
-  defaultValue?: Date
+  defaultValue?: Date | undefined
   disabled?: boolean
   errorText?: string
   isRequired?: boolean

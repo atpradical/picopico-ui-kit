@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ElementRef, ReactNode, forwardRef } from 'react'
 
-import { Typography } from '@/components'
+import { ScrollArea, ScrollBar, Typography } from '@/components'
 import { ArrowIosDownOutlineIcon } from '@/icons'
 import * as RDXS from '@radix-ui/react-select'
 import { clsx } from 'clsx'
@@ -66,9 +66,12 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
           </RDXS.Trigger>
           <RDXS.Portal>
             <RDXS.Content className={s.content} position={'popper'}>
-              <RDXS.Viewport>
-                <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
-              </RDXS.Viewport>
+              <ScrollArea className={s.scrollAreaRoot}>
+                <RDXS.Viewport>
+                  <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
+                </RDXS.Viewport>
+                <ScrollBar />
+              </ScrollArea>
             </RDXS.Content>
           </RDXS.Portal>
         </RDXS.Root>

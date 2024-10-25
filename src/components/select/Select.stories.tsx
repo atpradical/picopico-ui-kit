@@ -37,6 +37,15 @@ const meta = {
         },
       },
     },
+    showScroll: {
+      control: { type: 'boolean' },
+      table: {
+        defaultValue: { summary: 'false' },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
   },
   args: {
     label: 'Select-box',

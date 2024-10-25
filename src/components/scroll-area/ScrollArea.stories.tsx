@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { ScrollArea } from './ScrollArea'
+import { ScrollArea, ScrollBar } from './ScrollArea'
 
 const meta = {
   component: ScrollArea,
@@ -97,6 +97,8 @@ export const DefaultStory: Story = {
           dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
           laoreet dolore magna aliquam erat volutpat.{' '}
         </p>
+        <ScrollBar orientation={'horizontal'} />
+        <ScrollBar orientation={'vertical'} />
       </div>
     ),
     style: {

@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { Id, ToastContainer, ToastContentProps, ToastOptions, toast } from 'react-toastify'
 
 import { Button, Typography } from '@/components'
@@ -12,7 +12,7 @@ import '@/styles/_toastify.scss'
 import s from './Toast.module.scss'
 
 export type ToastProps = {
-  text: string
+  text: ReactNode | string
   variant?: 'error' | 'success'
 } & Partial<ToastContentProps>
 

@@ -36,7 +36,12 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
     ref
   ) => {
     const mappedOptions = options?.map((item, index) => (
-      <RDXS.SelectItem className={s.selectItem} key={item.value + index} value={item.value}>
+      <RDXS.SelectItem
+        className={s.selectItem}
+        key={item.value + index}
+        textValue={item.option}
+        value={item.value}
+      >
         <RDXS.ItemText asChild>
           <div className={s.option}>
             {item.icon}

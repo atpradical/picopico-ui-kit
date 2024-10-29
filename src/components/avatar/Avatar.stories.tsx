@@ -18,9 +18,9 @@ const meta = {
     // todo: update args with 'showFallback'
   },
   args: {
-    name: 'User Name',
     size: 'm',
     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKEwDTsw5qeyPzAFFLuPAJaeE3Q4YxSz6v0Q&s',
+    userName: 'User Name',
   },
   component: Avatar,
   title: 'Components/Avatar',

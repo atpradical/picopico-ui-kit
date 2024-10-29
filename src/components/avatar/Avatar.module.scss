@@ -1,3 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 12px;
+}
+
 .root {
   cursor: pointer;
   user-select: none;
@@ -54,4 +62,10 @@
 .fallBackIcon {
   width: var(--icon-size-xl);
   height: var(--icon-size-xl);
+}
+
+.avatar {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-weight-medium);
 }

@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react'
 
+import { Typography } from '@/components'
 import { ImageOutlineIcon } from '@/icons'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
 import { clsx } from 'clsx'
@@ -7,18 +8,20 @@ import { clsx } from 'clsx'
 import s from './Avatar.module.scss'
 
 type AvatarProps = {
-  name?: string
   showFallback?: boolean
+  showUserName?: boolean
   size?: 'l' | 'm' | 's' | 'xs'
   src?: string
+  userName?: string
 } & ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 
 export const Avatar = ({
   className,
-  name,
   showFallback = false,
+  showUserName = false,
   size = 'm',
   src,
+  userName,
   ...rest
 }: AvatarProps) => {
   const classNames = {
@@ -28,15 +31,17 @@ export const Avatar = ({
   }
 
   //@ts-ignore
-  const fallbackTitle = name?.[0].toUpperCase()
+  const fallbackTitle = userName?.[0].toUpperCase()
 
   return (
-    <AvatarPrimitive.Root className={classNames.root} {...rest}>
-      <AvatarPrimitive.Image alt={'avatar'} className={classNames.image} src={src ?? ''} />
-
-      <AvatarPrimitive.Fallback className={classNames.fallback}>
-        {showFallback ? fallbackTitle : <ImageOutlineIcon className={s.fallBackIcon} />}
-      </AvatarPrimitive.Fallback>
-    </AvatarPrimitive.Root>
+    <div className={s.container}>
+      <AvatarPrimitive.Root className={classNames.root} {...rest}>
+        <AvatarPrimitive.Image alt={'avatar'} className={classNames.image} src={src ?? ''} />
+        <AvatarPrimitive.Fallback className={classNames.fallback}>
+          {showFallback ? fallbackTitle : <ImageOutlineIcon className={s.fallBackIcon} />}
+        </AvatarPrimitive.Fallback>
+      </AvatarPrimitive.Root>
+      {showUserName && <Typography>{userName}</Typography>}
+    </div>
   )
 }

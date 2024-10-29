@@ -64,6 +64,11 @@
   height: var(--icon-size-xl);
 }
 
+.fallBackSmallIcon {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+}
+
 .avatar {
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);

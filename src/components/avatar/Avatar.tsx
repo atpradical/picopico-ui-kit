@@ -38,7 +38,13 @@ export const Avatar = ({
       <AvatarPrimitive.Root className={classNames.root} {...rest}>
         <AvatarPrimitive.Image alt={'avatar'} className={classNames.image} src={src ?? ''} />
         <AvatarPrimitive.Fallback className={classNames.fallback}>
-          {showFallback ? fallbackTitle : <ImageOutlineIcon className={s.fallBackIcon} />}
+          {showFallback ? (
+            fallbackTitle
+          ) : (
+            <ImageOutlineIcon
+              className={clsx(size === 's' ? s.fallBackSmallIcon : s.fallBackIcon)}
+            />
+          )}
         </AvatarPrimitive.Fallback>
       </AvatarPrimitive.Root>
       {showUserName && <Typography>{userName}</Typography>}

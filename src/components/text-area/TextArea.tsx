@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef, useId } from 'react'
 
-import { Typography } from '@/components'
+import { ScrollArea, ScrollBar, Typography } from '@/components'
 import { clsx } from 'clsx'
 
 import s from './TextArea.module.scss'
@@ -16,8 +16,17 @@ export type TextAreaProps = {
 type TextAreaRef = ElementRef<'textarea'>
 
 export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
-  const { className, counterLimit, counterValue, disabled, errorText, isRequired, label, ...rest } =
-    props
+  const {
+    children,
+    className,
+    counterLimit,
+    counterValue,
+    disabled,
+    errorText,
+    isRequired,
+    label,
+    ...rest
+  } = props
   const id = useId()
 
   return (

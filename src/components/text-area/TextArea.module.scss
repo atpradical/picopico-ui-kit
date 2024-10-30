@@ -24,6 +24,66 @@
   &:active {
     border: var(--border-size-standard) solid var(--color-light-100);
   }
+
+  // Стилизация вертикального скроллбара
+  &::-webkit-scrollbar {
+    width: var(--scroll-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-dark-300);
+    border-radius: var(--border-radius-xs);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-dark-100);
+    border-radius: var(--border-radius-xs);
+
+    &:hover {
+      cursor: pointer;
+      background: var(--color-light-900);
+    }
+
+    &:active {
+      cursor: grabbing;
+      background: var(--color-light-900);
+    }
+  }
+
+  // Стилизация горизонтального скроллбара
+  &::-webkit-scrollbar:horizontal {
+    height: var(--scroll-height);
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    background: var(--color-dark-300);
+    border-radius: var(--border-radius-xs);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    background: var(--color-dark-100);
+    border-radius: var(--border-radius-xs);
+
+    &:hover {
+      cursor: pointer;
+      background: var(--color-light-900);
+    }
+
+    &:active {
+      cursor: grabbing;
+      background: var(--color-light-900);
+    }
+  }
+
+  // Скрытие уголка скроллбара для WebKit
+  &::-webkit-scrollbar-corner {
+    background: var(--color-dark-300); // Задаем цвет, совпадающий с фоном трека
+  }
+
+  // Дополнительные стили для скрытия уголка
+  &::-webkit-resizer {
+    background: var(--color-dark-300); // Скрываем элемент, который может быть поверх уголка
+  }
 }
 
 .disabled {

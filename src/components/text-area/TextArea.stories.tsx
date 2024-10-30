@@ -4,6 +4,22 @@ import { TextArea } from './TextArea'
 
 const meta = {
   argTypes: {
+    counterLimit: {
+      control: { type: 'number' },
+      table: {
+        type: {
+          summary: 'number',
+        },
+      },
+    },
+    counterValue: {
+      control: { type: 'number' },
+      table: {
+        type: {
+          summary: 'number',
+        },
+      },
+    },
     disabled: {
       control: { type: 'boolean' },
       table: {
@@ -13,7 +29,7 @@ const meta = {
         },
       },
     },
-    error: {
+    errorText: {
       control: {
         type: 'text',
       },
@@ -67,7 +83,7 @@ export const Default: Story = {
 
 export const TextAreaWithError: Story = {
   args: {
-    error: 'Some error occurred...',
+    errorText: 'Some error occurred...',
     isRequired: true,
     label: 'Some text-area label',
     placeholder: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.',

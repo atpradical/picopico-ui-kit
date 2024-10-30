@@ -6,6 +6,8 @@ import { clsx } from 'clsx'
 import s from './TextArea.module.scss'
 
 export type TextAreaProps = {
+  counterLimit?: number
+  counterValue?: number
   errorText?: string
   isRequired?: boolean
   label?: string
@@ -14,7 +16,8 @@ export type TextAreaProps = {
 type TextAreaRef = ElementRef<'textarea'>
 
 export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
-  const { className, disabled, errorText, isRequired, label, ...rest } = props
+  const { className, counterLimit, counterValue, disabled, errorText, isRequired, label, ...rest } =
+    props
   const id = useId()
 
   return (
@@ -36,11 +39,18 @@ export const TextArea = forwardRef<TextAreaRef, TextAreaProps>((props, ref) => {
         ref={ref}
         {...rest}
       />
-      {!!errorText && (
-        <Typography className={s.errorText} variant={'error'}>
-          {errorText}
-        </Typography>
-      )}
+      <div className={s.errorCounterWrapper}>
+        {!!counterLimit && (
+          <Typography className={s.counter} variant={'small'}>
+            {`${counterValue ?? '0'}/${counterLimit}`}
+          </Typography>
+        )}
+        {!!errorText && (
+          <Typography className={s.errorText} variant={'error'}>
+            {errorText}
+          </Typography>
+        )}
+      </div>
     </div>
   )
 })

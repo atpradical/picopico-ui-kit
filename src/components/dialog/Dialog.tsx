@@ -1,5 +1,7 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
+import { Button, Card } from '@/components'
+import { CloseOutlineIcon } from '@/icons'
 import * as RDXD from '@radix-ui/react-dialog'
 import clsx from 'clsx'
 
@@ -23,14 +25,28 @@ DialogOverlay.displayName = RDXD.Overlay.displayName
 
 type DialogContentProps = {
   overlayClassName?: string
+  withCloseButton?: boolean
 } & ComponentPropsWithoutRef<typeof RDXD.Content>
 type DialogContentRef = ElementRef<typeof RDXD.Content>
 
 const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
-  ({ className, overlayClassName, ...rest }, ref) => (
+  ({ children, className, overlayClassName, style, withCloseButton = false, ...rest }, ref) => (
     <DialogPortal>
       <DialogOverlay className={overlayClassName} />
-      <RDXD.Content className={clsx(s.content, className)} ref={ref} {...rest} />
+      <RDXD.Content className={s.content} ref={ref} {...rest}>
+        {withCloseButton ? (
+          <div className={s.cardWrapper}>
+            <Button className={s.externalCloseButton} variant={'icon'}>
+              <CloseOutlineIcon />
+            </Button>
+            <Card className={clsx(s.card, className)}>{children}</Card>
+          </div>
+        ) : (
+          <Card className={clsx(s.card, className)} style={style}>
+            {children}
+          </Card>
+        )}
+      </RDXD.Content>
     </DialogPortal>
   )
 )

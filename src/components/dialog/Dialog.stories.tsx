@@ -35,9 +35,9 @@ type Story = StoryObj<typeof meta>
 export const Dialog: Story = {
   render: () => {
     return (
-      <DialogRoot>
+      <DialogRoot open>
         <Trigger />
-        <DialogContent style={{ maxWidth: '542px' }}>
+        <DialogContent style={{ maxWidth: '542px' }} withCloseButton>
           <Title />
           <Header />
           <Description />

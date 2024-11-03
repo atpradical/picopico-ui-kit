@@ -51,14 +51,10 @@
   flex-direction: row-reverse;
 }
 
-.cardWithCloseButtonWrapper {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
 .cardWithCloseButton {
-  padding: 12px 24px;
+  margin: 36px 24px;
   width: 100%;
+  padding: 0;
   background-color: var(--color-dark-300);
   border: var(--border-size-standard) solid var(--color-dark-100);
   border-radius: var(--border-radius-xs);
@@ -73,13 +69,8 @@
 }
 
 .externalCloseButton {
+  margin-top: 2px;
   align-self: flex-start;
-  //position: absolute;
-  //top: 2px;
-  //right: 2px;
-  //top: 50%;
-  //right: 50%;
-  //transform: translateX(50%);
 }
 
 .header {

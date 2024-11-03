@@ -24,19 +24,23 @@ const DialogOverlay = forwardRef<DialogOverlayRef, DialogOverlayProps>(
 DialogOverlay.displayName = RDXD.Overlay.displayName
 
 type DialogContentProps = {
+  onClose?: () => void
   overlayClassName?: string
   withCloseButton?: boolean
 } & ComponentPropsWithoutRef<typeof RDXD.Content>
 type DialogContentRef = ElementRef<typeof RDXD.Content>
 
 const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
-  ({ children, className, overlayClassName, style, withCloseButton = false, ...rest }, ref) => (
+  (
+    { children, className, onClose, overlayClassName, style, withCloseButton = false, ...rest },
+    ref
+  ) => (
     <DialogPortal>
       <DialogOverlay className={overlayClassName} />
       <RDXD.Content className={s.content} ref={ref} {...rest}>
         {withCloseButton ? (
           <div className={s.closeButtonWrapper} style={style}>
-            <Button className={s.externalCloseButton} variant={'icon'}>
+            <Button className={s.externalCloseButton} onClick={onClose} variant={'icon'}>
               <CloseOutlineIcon />
             </Button>
             <Card className={clsx(s.cardWithCloseButton, className)}>{children}</Card>

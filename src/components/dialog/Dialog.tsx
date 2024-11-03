@@ -35,7 +35,7 @@ const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
       <DialogOverlay className={overlayClassName} />
       <RDXD.Content className={s.content} ref={ref} {...rest}>
         {withCloseButton ? (
-          <div className={s.cardWrapper} style={style}>
+          <div className={s.closeButtonWrapper} style={style}>
             <Button className={s.externalCloseButton} variant={'icon'}>
               <CloseOutlineIcon />
             </Button>

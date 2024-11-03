@@ -32,6 +32,8 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+// todo: добавить пропсы в том числе withCloseButton в storybook
+
 export const Dialog: Story = {
   render: () => {
     return (

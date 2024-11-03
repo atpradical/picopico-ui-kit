@@ -44,11 +44,12 @@
   }
 }
 
-.cardWrapper {
+.closeButtonWrapper {
   width: 100%;
   background-color: transparent;
   display: flex;
   flex-direction: row-reverse;
+  justify-content: center;
 }
 
 .cardWithCloseButton {

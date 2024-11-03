@@ -39,7 +39,7 @@ export const Dialog: Story = {
     return (
       <DialogRoot open>
         <Trigger />
-        <DialogContent style={{ maxWidth: '542px' }}>
+        <DialogContent withCloseButton>
           <Title />
           <Header />
           <Description />

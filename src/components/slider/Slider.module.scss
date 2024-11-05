@@ -1,0 +1,46 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  height: 12px;
+}
+
+.track {
+  background-color: var(--color-light-100);
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  height: 2px;
+  cursor: pointer;
+}
+
+.range {
+  position: absolute;
+  background-color: var(--color-accent-500);
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.thumd {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-light-100);
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: var(--color-accent-100);
+    cursor: grab;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-accent-500);
+  }
+}

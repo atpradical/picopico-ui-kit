@@ -10,7 +10,7 @@ const AspectVerticalRectangleIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SV
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
-    <rect height={24} rx={2} stroke={'#8D9094'} strokeWidth={2} width={16} x={1} y={1} />
+    <rect fill={'#fff'} height={24} rx={2} strokeWidth={2} width={16} x={1} y={1} />
   </svg>
 )
 const ForwardRef = forwardRef(AspectVerticalRectangleIcon)

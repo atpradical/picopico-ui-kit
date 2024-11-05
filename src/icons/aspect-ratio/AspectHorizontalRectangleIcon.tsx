@@ -14,9 +14,9 @@ const RectangleHorizontalRectangleIcon = (
     {...props}
   >
     <rect
+      fill={'#fff'}
       height={24}
       rx={2}
-      stroke={'#8D9094'}
       strokeWidth={2}
       transform={'rotate(90 25 1)'}
       width={18}

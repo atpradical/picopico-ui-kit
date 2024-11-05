@@ -31,7 +31,7 @@ export const Avatar = ({
   }
 
   //@ts-ignore
-  const fallbackTitle = userName?.[0].toUpperCase()
+  const fallbackTitle = userName && userName?.[0].toUpperCase()
 
   return (
     <div className={s.container}>

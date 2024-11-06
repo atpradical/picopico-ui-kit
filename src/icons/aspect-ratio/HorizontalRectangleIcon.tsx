@@ -1,22 +1,19 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-const RectangleHorizontalRectangleIcon = (
-  props: SVGProps<SVGSVGElement>,
-  ref: Ref<SVGSVGElement>
-) => (
+const HorizontalRectangleIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
-    height={'1em'}
+    height={'20'}
     ref={ref}
     viewBox={'0 0 26 20'}
-    width={'1em'}
+    width={'26'}
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
     <rect
-      fill={'#fff'}
       height={24}
       rx={2}
+      stroke={'#fff'}
       strokeWidth={2}
       transform={'rotate(90 25 1)'}
       width={18}
@@ -25,7 +22,7 @@ const RectangleHorizontalRectangleIcon = (
     />
   </svg>
 )
-const ForwardRef = forwardRef(RectangleHorizontalRectangleIcon)
+const ForwardRef = forwardRef(HorizontalRectangleIcon)
 const Memo = memo(ForwardRef)
 
 export default Memo

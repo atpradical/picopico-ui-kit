@@ -2,6 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 
 import { Iconography } from './Iconography'
 import {
+  ascpectRatioIconsList,
   browserIconsList,
   flagsIconsList,
   iconsList,
@@ -35,4 +36,8 @@ export const Payments: Story = {
 
 export const SocialNetworks: Story = {
   args: { icons: socialNetworksIconsList },
+}
+
+export const AspectRatio: Story = {
+  args: { icons: ascpectRatioIconsList },
 }

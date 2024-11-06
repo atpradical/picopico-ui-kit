@@ -13,7 +13,7 @@ const HorizontalRectangleIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVG
     <rect
       height={24}
       rx={2}
-      stroke={'#fff'}
+      stroke={'currentColor'}
       strokeWidth={2}
       transform={'rotate(90 25 1)'}
       width={18}

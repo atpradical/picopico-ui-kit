@@ -47,6 +47,7 @@ import {
   HeartOutlineIcon,
   HomeIcon,
   HomeOutlineIcon,
+  HorizontalRectangleIcon,
   ImageIcon,
   ImageOutlineIcon,
   LayersIcon,
@@ -93,12 +94,14 @@ import {
   SearchOutlineIcon,
   SettingsIcon,
   SettingsOutlineIcon,
+  SquareIcon,
   StripeIcon,
   TrashIcon,
   TrashOutlineIcon,
   TrendingUpIcon,
   TrendingUpOutlineIcon,
   UcBrowserIcon,
+  VerticalRectangleIcon,
   YandexIcon,
 } from '@/icons'
 
@@ -228,4 +231,16 @@ export const socialNetworksIconsList: Icon[] = [
   { component: <FacebookIcon className={s.icon} />, name: 'Facebook' },
   { component: <GithubIcon className={s.icon} />, name: 'Github' },
   { component: <GoogleIcon className={s.icon} />, name: 'Google' },
+]
+
+export const ascpectRatioIconsList: Icon[] = [
+  {
+    component: <HorizontalRectangleIcon className={s.icon} />,
+    name: 'Aspect Horizontal Rectangle',
+  },
+  { component: <SquareIcon className={s.icon} />, name: 'Aspect Square' },
+  {
+    component: <VerticalRectangleIcon className={s.icon} />,
+    name: 'Aspect Vertical Rectangle',
+  },
 ]

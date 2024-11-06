@@ -1,3 +1,3 @@
-export { default as AspectHorizontalRectangle } from './AspectHorizontalRectangleIcon'
-export { default as AspectSquareRatioIcon } from './AspectSquareIcon'
-export { default as AspectVerticalRectangle } from './AspectVerticalRectangleIcon'
+export { default as HorizontalRectangleIcon } from './HorizontalRectangleIcon'
+export { default as SquareIcon } from './SquareIcon'
+export { default as VerticalRectangleIcon } from './VerticalRectangleIcon'

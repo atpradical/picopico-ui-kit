@@ -1,6 +1,6 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-const AspectSquareIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+const SquareIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'18'}
@@ -10,10 +10,10 @@ const AspectSquareIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
-    <rect fill={'#fff'} height={16} rx={2} strokeWidth={2} width={16} x={1} y={1} />
+    <rect height={16} rx={2} stroke={'#fff'} strokeWidth={2} width={16} x={1} y={1} />
   </svg>
 )
-const ForwardRef = forwardRef(AspectSquareIcon)
+const ForwardRef = forwardRef(SquareIcon)
 const Memo = memo(ForwardRef)
 
 export default Memo

@@ -1,7 +1,7 @@
 {
   "name": "@atpradical/picopico-ui-kit",
   "private": false,
-  "version": "0.21.4",
+  "version": "0.22.0",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -32,6 +32,8 @@
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slider": "^1.2.1",
     "@radix-ui/react-tabs": "^1.1.1",
+    "@radix-ui/react-toggle": "^1.1.0",
+    "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "@storybook/builder-vite": "^8.3.5",
     "clsx": "^2.1.1",

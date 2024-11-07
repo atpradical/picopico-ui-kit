@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import s from './Slider.module.scss'
 
 type SliderProps = ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+
 type SliderRef = ElementRef<typeof SliderPrimitive.Root>
 
 const Slider = forwardRef<SliderRef, SliderProps>(({ className, ...props }, ref) => (

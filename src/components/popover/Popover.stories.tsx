@@ -31,3 +31,24 @@ export const Default: Story = {
     )
   },
 }
+
+export const Default2: Story = {
+  name: 'Popover2',
+  render: () => {
+    return (
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button variant={'icon'}>
+            <MoreHorizontalIcon />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent>
+          <Button>Popover Content</Button>
+          <Button>Popover Content</Button>
+          <Button>Popover Content</Button>
+          <Button>Popover Content</Button>
+        </PopoverContent>
+      </Popover>
+    )
+  },
+}

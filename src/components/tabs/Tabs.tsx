@@ -27,7 +27,7 @@ type TabsTriggerProps = ComponentPropsWithoutRef<typeof RDXT.Trigger>
 type TabsTriggerRef = ElementRef<typeof RDXT.Trigger>
 
 const TabsTrigger = forwardRef<TabsTriggerRef, TabsTriggerProps>(({ className, ...props }, ref) => (
-  <RDXT.Trigger className={clsx(s.trigger, className)} ref={ref} {...props} />
+  <RDXT.Trigger className={clsx(s.trigger, s.ripple, className)} ref={ref} {...props} />
 ))
 
 TabsTrigger.displayName = RDXT.Trigger.displayName

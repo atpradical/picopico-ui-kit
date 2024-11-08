@@ -27,6 +27,8 @@ const PopoverContent = forwardRef<PopoverContentRef, PopoverContentProps>(
       <PopoverPrimitive.Content
         align={align}
         className={clsx(s.content, className)}
+        onTouchMove={e => e.stopPropagation()}
+        onWheel={e => e.stopPropagation()}
         ref={ref}
         sideOffset={sideOffset}
         {...props}

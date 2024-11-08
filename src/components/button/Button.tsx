@@ -22,7 +22,7 @@ export const Button = forwardRef(
       variant = 'primary',
       ...rest
     } = props
-    const cn = clsx(s.button, s[variant], fullWidth && s.fullWidth, className)
+    const cn = clsx(s.button, s[variant], fullWidth && s.fullWidth, className, s.ripple)
 
     return <Component className={cn} ref={ref} type={type} {...rest} />
   }

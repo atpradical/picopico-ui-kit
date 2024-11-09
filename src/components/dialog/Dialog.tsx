@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
-import { Button, Card } from '@/components'
+import { Button, Card, CustomToastContainer } from '@/components'
 import { CloseOutlineIcon } from '@/icons'
 import * as RDXD from '@radix-ui/react-dialog'
 import clsx from 'clsx'
@@ -86,7 +86,10 @@ DialogDescription.displayName = RDXD.Description.displayName
 type DialogBodyProps = ComponentPropsWithoutRef<'div'>
 
 const DialogBody = ({ className, ...rest }: DialogBodyProps) => (
-  <div className={clsx(s.body, className)} {...rest} />
+  <>
+    <div className={clsx(s.body, className)} {...rest} />
+    <CustomToastContainer containerId={'modal'} />
+  </>
 )
 
 type DialogFooterProps = ComponentPropsWithoutRef<'div'>

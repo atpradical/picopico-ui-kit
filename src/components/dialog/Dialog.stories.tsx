@@ -6,6 +6,7 @@ import { CloseOutlineIcon, MoreHorizontalIcon } from '../../icons'
 import { Button } from '../button'
 import { Checkbox } from '../checkbox'
 import { TextField } from '../text-field'
+import { toasterModal } from '../toast'
 import { Typography } from '../typography'
 import {
   DialogBody,
@@ -33,6 +34,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 // todo: добавить пропсы в том числе withCloseButton в storybook
+// todo: добавить информацию про тоасты в диалоге
 
 export const Dialog: Story = {
   render: () => {
@@ -92,6 +94,9 @@ const Body = () => (
       <Typography variant={'regular_14'}>{descriptionMockText}</Typography>
       <TextField label={'Some Label'} placeholder={'some placeholder...'} />
       <Checkbox isRequired label={'CheckBox label'} />
+      <Button onClick={() => toasterModal({ text: 'This is dialog Toast', variant: 'error' })}>
+        Toast Dialog
+      </Button>
     </div>
   </DialogBody>
 )

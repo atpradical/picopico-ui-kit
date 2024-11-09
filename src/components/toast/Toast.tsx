@@ -19,6 +19,7 @@ export type ToastProps = {
 export const defaultToastOptions: ToastOptions = {
   autoClose: TOASTER_AUTO_CLOSE_DELAY,
   closeButton: false,
+  containerId: 'main',
   hideProgressBar: true,
   pauseOnHover: true,
   position: 'bottom-left',
@@ -26,6 +27,18 @@ export const defaultToastOptions: ToastOptions = {
 
 export const toaster = (myProps: ToastProps, toastProps?: ToastOptions): Id =>
   toast(<CustomToast {...myProps} />, { ...defaultToastOptions, ...toastProps })
+
+export const defaultModalToastOptions: ToastOptions = {
+  containerId: 'modal',
+  position: 'top-center',
+}
+
+export const toasterModal = (myProps: ToastProps, toastProps?: ToastOptions): Id =>
+  toast(<CustomToast {...myProps} />, {
+    ...defaultToastOptions,
+    ...defaultModalToastOptions,
+    ...toastProps,
+  })
 
 export const CustomToast = ({ closeToast, text, variant = 'success' }: ToastProps) => {
   return (
@@ -40,6 +53,9 @@ export const CustomToast = ({ closeToast, text, variant = 'success' }: ToastProp
 
 type CustomToastContainerProps = ComponentPropsWithoutRef<typeof ToastContainer>
 
-export const CustomToastContainer = (props: CustomToastContainerProps) => {
-  return <ToastContainer draggable newestOnTop {...props} />
+export const CustomToastContainer = ({
+  containerId = 'main',
+  ...rest
+}: CustomToastContainerProps) => {
+  return <ToastContainer containerId={containerId} draggable newestOnTop {...rest} />
 }

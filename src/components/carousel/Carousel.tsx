@@ -49,7 +49,7 @@ export const Carousel = forwardRef<SwiperRef, CarouselProps>(({ slides, ...rest 
   )
 })
 
-const SwiperButtons = () => {
+export const SwiperButtons = () => {
   const swiper = useSwiper()
   const [isActiveIndex, setActiveSlideIndex] = useState(swiper.activeIndex)
 

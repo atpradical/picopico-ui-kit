@@ -9,6 +9,7 @@ type InferType<T> = T extends ElementType<infer U> ? U : never
 export type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
   fullWidth?: boolean
+  ripple?: boolean
   variant?: 'icon' | 'link' | 'nb-outlined' | 'outlined' | 'primary' | 'secondary'
 } & ComponentPropsWithoutRef<T>
 
@@ -18,11 +19,12 @@ export const Button = forwardRef(
       as: Component = 'button',
       className,
       fullWidth,
+      ripple = true,
       type = 'button',
       variant = 'primary',
       ...rest
     } = props
-    const cn = clsx(s.button, s[variant], fullWidth && s.fullWidth, className, s.ripple)
+    const cn = clsx(s.button, s[variant], fullWidth && s.fullWidth, className, ripple && s.ripple)
 
     return <Component className={cn} ref={ref} type={type} {...rest} />
   }

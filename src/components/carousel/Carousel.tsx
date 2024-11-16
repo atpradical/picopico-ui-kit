@@ -1,11 +1,11 @@
-import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ElementRef, forwardRef, useEffect, useState } from 'react'
 
 import { Button, Card } from '@/components'
 import { ArrowIosBackOutlineIcon, ArrowIosForwardOutlineIcon } from '@/icons'
-/* eslint-disable import/extensions */
 import { EffectFade, Keyboard, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 
+/* eslint-disable import/extensions */
 // import lib swiper's styles for proper slider display and disable rule as import require a css file.
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -51,19 +51,44 @@ export const Carousel = forwardRef<SwiperRef, CarouselProps>(({ slides, ...rest 
 
 const SwiperButtons = () => {
   const swiper = useSwiper()
+  const [isActiveIndex, setActiveSlideIndex] = useState(swiper.activeIndex)
+
+  useEffect(() => {
+    const updateSlideIndex = () => {
+      setActiveSlideIndex(swiper.activeIndex)
+    }
+
+    swiper.on('slideChange', updateSlideIndex)
+
+    // Обновление значения при первом рендере
+    updateSlideIndex()
+
+    // Очистка подписки на событие при размонтировании компонента
+    return () => {
+      swiper.off('slideChange', updateSlideIndex)
+    }
+  }, [swiper])
+
+  if (!swiper.slides.length) {
+    return null
+  }
 
   return (
     <div>
-      <Card className={s.prevBtn} variant={'transparent'}>
-        <Button onClick={() => swiper.slidePrev()} variant={'icon'}>
-          <ArrowIosBackOutlineIcon className={s.icon} />
-        </Button>
-      </Card>
-      <Card className={s.nextBtn} variant={'transparent'}>
-        <Button onClick={() => swiper.slideNext()} variant={'icon'}>
-          <ArrowIosForwardOutlineIcon className={s.icon} />
-        </Button>
-      </Card>
+      {isActiveIndex > 0 && (
+        <Card className={s.prevBtn} variant={'transparent'}>
+          <Button onClick={() => swiper.slidePrev()} variant={'icon'}>
+            <ArrowIosBackOutlineIcon className={s.icon} />
+          </Button>
+        </Card>
+      )}
+      {isActiveIndex < swiper.slides.length - 1 && (
+        <Card className={s.nextBtn} variant={'transparent'}>
+          <Button onClick={() => swiper.slideNext()} variant={'icon'}>
+            <ArrowIosForwardOutlineIcon className={s.icon} />
+          </Button>
+        </Card>
+      )}
     </div>
   )
 }

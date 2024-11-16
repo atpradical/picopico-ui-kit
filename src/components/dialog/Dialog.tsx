@@ -24,6 +24,7 @@ const DialogOverlay = forwardRef<DialogOverlayRef, DialogOverlayProps>(
 DialogOverlay.displayName = RDXD.Overlay.displayName
 
 type DialogContentProps = {
+  noBorder?: boolean
   onClose?: () => void
   overlayClassName?: string
   withCloseButton?: boolean
@@ -32,7 +33,16 @@ type DialogContentRef = ElementRef<typeof RDXD.Content>
 
 const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
   (
-    { children, className, onClose, overlayClassName, style, withCloseButton = false, ...rest },
+    {
+      children,
+      className,
+      noBorder,
+      onClose,
+      overlayClassName,
+      style,
+      withCloseButton = false,
+      ...rest
+    },
     ref
   ) => (
     <DialogPortal>
@@ -46,7 +56,7 @@ const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
             <Card className={clsx(s.cardWithCloseButton, className)}>{children}</Card>
           </div>
         ) : (
-          <Card className={clsx(s.card, className)} style={style}>
+          <Card className={clsx(s.card, noBorder && s.noBorder, className)} style={style}>
             {children}
           </Card>
         )}
@@ -66,10 +76,10 @@ const DialogTitle = forwardRef<DialogTitleRef, DialogTitleProps>(({ className, .
 
 DialogTitle.displayName = RDXD.Title.displayName
 
-type DialogHeaderProps = ComponentPropsWithoutRef<'div'>
+type DialogHeaderProps = { noBorder?: boolean } & ComponentPropsWithoutRef<'div'>
 
-const DialogHeader = ({ className, ...rest }: DialogHeaderProps) => (
-  <div className={clsx(s.header, className)} {...rest} />
+const DialogHeader = ({ className, noBorder, ...rest }: DialogHeaderProps) => (
+  <div className={clsx(s.header, noBorder && s.noBorder, className)} {...rest} />
 )
 
 type DialogDescriptionProps = ComponentPropsWithoutRef<typeof RDXD.Description>

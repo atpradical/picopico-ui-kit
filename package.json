@@ -1,7 +1,7 @@
 {
   "name": "@atpradical/picopico-ui-kit",
   "private": false,
-  "version": "0.26.7",
+  "version": "0.27.2",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -49,7 +49,6 @@
     "@it-incubator/eslint-config": "^1.0.2",
     "@it-incubator/prettier-config": "^0.1.2",
     "@it-incubator/stylelint-config": "^2.0.0",
-    "@microsoft/api-extractor": "^7.48.1",
     "@storybook/addon-essentials": "8.3.5",
     "@storybook/addon-interactions": "8.3.5",
     "@storybook/addon-links": "8.3.5",
@@ -72,9 +71,9 @@
     "sass": "^1.79.5",
     "storybook": "8.3.5",
     "stylelint": "^16.10.0",
-    "typescript": "^5.7.2",
+    "typescript": "^5.6.0",
     "typescript-eslint": "^8.7.0",
     "vite": "^5.4.8",
-    "vite-plugin-dts": "^4.3.0"
+    "vite-plugin-dts": "^4.2.4"
   }
 }

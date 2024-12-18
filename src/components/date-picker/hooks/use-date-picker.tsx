@@ -25,16 +25,18 @@ export const useDatePicker = ({
 }: UseDatePickerArgs) => {
   const [isOpen, setIsOpen] = useState(false)
   const [month, setMonth] = useState(new Date())
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState(
+    defaultValue ? defaultValue?.toLocaleDateString() : ''
+  )
   const id = useId()
 
   useEffect(() => {
     if (defaultValue) {
       dayPickerSingleHandler(defaultValue)
-      setInputValue(defaultValue.toLocaleDateString())
+      // setInputValue()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValue])
+  }, [])
 
   const iconCN = clsx(s.icon, errorText && s.error, disabled && s.disabled)
 

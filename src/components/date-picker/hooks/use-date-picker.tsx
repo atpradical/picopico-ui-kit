@@ -34,7 +34,7 @@ export const useDatePicker = ({
       setInputValue(defaultValue.toLocaleDateString())
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [defaultValue])
 
   const iconCN = clsx(s.icon, errorText && s.error, disabled && s.disabled)
 

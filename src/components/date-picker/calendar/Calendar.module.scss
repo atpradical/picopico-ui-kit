@@ -156,3 +156,18 @@
 .rangeMiddle {
   border-radius: 0;
 }
+
+.select {
+  cursor: pointer;
+  background-color: var(--color-dark-500);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+  margin-left: 5px;
+  border: none;
+
+  &:focus {
+    border-radius: var(--border-radius-xs);
+    outline: var(--outline-size-standard) solid var(--color-accent-500);
+  }
+}

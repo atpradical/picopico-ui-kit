@@ -1,3 +1,4 @@
+import React from 'react'
 import { DayFlag, DayPicker, type DayPickerProps, SelectionState, UI } from 'react-day-picker'
 
 import { ArrowIosBackIcon, ArrowIosForwardIcon } from '@/icons'
@@ -20,6 +21,7 @@ export const Calendar = ({
 }: DayPickerProps) => {
   return (
     <DayPicker
+      captionLayout={'dropdown'}
       className={className}
       classNames={{
         [DayFlag.focused]: s.focused,
@@ -53,6 +55,21 @@ export const Calendar = ({
           }
 
           return <ArrowIosForwardIcon {...props} />
+        },
+        Dropdown: props => {
+          const { className, options, ...selectProps } = props
+
+          return (
+            <span data-disabled={selectProps.disabled}>
+              <select className={s.select} {...selectProps}>
+                {options?.map(({ disabled, label, value }) => (
+                  <option disabled={disabled} key={value} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            </span>
+          )
         },
       }}
       fixedWeeks={fixedWeeks}

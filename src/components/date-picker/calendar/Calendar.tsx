@@ -57,7 +57,7 @@ export const Calendar = ({
           return <ArrowIosForwardIcon {...props} />
         },
         Dropdown: props => {
-          const { className, options, ...selectProps } = props
+          const { className, classNames, options, ...selectProps } = props
 
           return (
             <span data-disabled={selectProps.disabled}>

@@ -66,8 +66,6 @@ export const DatePickerStoryRU: Story = {
     const { onSelectSingleDate, ...rest } = args
     const [selectedDate, setSelectedDate] = useState<Date | undefined>()
 
-    console.log(selectedDate)
-
     return <DatePicker onSelectSingleDate={setSelectedDate} selected={selectedDate} {...rest} />
   },
 }

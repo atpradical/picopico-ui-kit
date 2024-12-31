@@ -9,6 +9,10 @@
   color: var(--color-light-100);
 }
 
+.closeButton {
+  flex-shrink: 0;
+}
+
 .content {
   display: flex;
   align-items: flex-start;

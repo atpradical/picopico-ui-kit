@@ -35,7 +35,7 @@ export const useDatePicker = ({
       dayPickerSingleHandler(defaultValue)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValue])
+  }, [])
 
   const iconCN = clsx(s.icon, errorText && s.error, disabled && s.disabled)
 

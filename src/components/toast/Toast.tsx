@@ -44,7 +44,7 @@ export const CustomToast = ({ closeToast, text, variant = 'success' }: ToastProp
   return (
     <div className={clsx(s.container, s[variant])}>
       <Typography variant={'regular_16'}>{text}</Typography>
-      <Button onClick={closeToast} variant={'icon'}>
+      <Button className={s.closeButton} onClick={closeToast} variant={'icon'}>
         <CloseOutlineIcon />
       </Button>
     </div>

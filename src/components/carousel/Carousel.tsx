@@ -57,7 +57,7 @@ export const Carousel = forwardRef<SwiperRef, CarouselProps>(({ slides, ...rest 
 
 export const SwiperButtons = () => {
   const swiper = useSwiper()
-  const [isActiveIndex, setActiveSlideIndex] = useState(swiper.activeIndex)
+  const [isActiveIndex, setActiveSlideIndex] = useState(0)
 
   useEffect(() => {
     const updateSlideIndex = () => {
@@ -73,14 +73,14 @@ export const SwiperButtons = () => {
     return () => {
       swiper.off('slideChange', updateSlideIndex)
     }
-  }, [swiper])
+  }, [swiper, swiper.activeIndex])
 
   if (!swiper.slides.length) {
     return null
   }
 
   return (
-    <div>
+    <div className={s.buttonsContainer}>
       {isActiveIndex > 0 && (
         <Card className={s.prevBtn} variant={'transparent'}>
           <Button onClick={() => swiper.slidePrev()} variant={'icon'}>

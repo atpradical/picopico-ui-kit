@@ -21,7 +21,13 @@ type CarouselProps = {
 type SwiperRef = ElementRef<typeof Swiper>
 
 export const Carousel = forwardRef<SwiperRef, CarouselProps>(({ slides, ...rest }, ref) => {
-  const isContent = slides && slides?.length > 1
+  const [isMultiSlides, setIsMultiSlides] = useState(false)
+
+  useEffect(() => {
+    if (slides && slides?.length > 1) {
+      setIsMultiSlides(true)
+    }
+  }, [slides])
 
   return (
     <div className={s.carouselRoot}>
@@ -43,7 +49,7 @@ export const Carousel = forwardRef<SwiperRef, CarouselProps>(({ slides, ...rest 
           </SwiperSlide>
         ))}
         <div className={'swiper-pagination'}></div>
-        {isContent && <SwiperButtons />}
+        {isMultiSlides && <SwiperButtons />}
       </Swiper>
     </div>
   )

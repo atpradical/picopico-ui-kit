@@ -1,6 +1,7 @@
 import React from 'react'
 import { DayFlag, DayPicker, type DayPickerProps, SelectionState, UI } from 'react-day-picker'
 
+import { CalendarSelect } from '@/components/date-picker/calendar-select'
 import { ArrowIosBackIcon, ArrowIosForwardIcon } from '@/icons'
 import { enUS } from 'date-fns/locale'
 
@@ -56,21 +57,7 @@ export const Calendar = ({
 
           return <ArrowIosForwardIcon {...props} />
         },
-        Dropdown: props => {
-          const { className, classNames, options, ...selectProps } = props
-
-          return (
-            <span data-disabled={selectProps.disabled}>
-              <select className={s.select} value={selectProps.value} {...selectProps}>
-                {options?.map(({ disabled, label, value }) => (
-                  <option disabled={disabled} key={value} value={value}>
-                    {label}
-                  </option>
-                ))}
-              </select>
-            </span>
-          )
-        },
+        Dropdown: props => <CalendarSelect {...props} />,
       }}
       fixedWeeks={fixedWeeks}
       locale={locale}

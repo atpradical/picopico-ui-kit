@@ -61,7 +61,7 @@ export const Calendar = ({
 
           return (
             <span data-disabled={selectProps.disabled}>
-              <select className={s.select} {...selectProps}>
+              <select className={s.select} {...selectProps} defaultValue={selectProps.value}>
                 {options?.map(({ disabled, label, value }) => (
                   <option disabled={disabled} key={value} value={value}>
                     {label}

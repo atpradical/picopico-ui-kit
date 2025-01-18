@@ -39,7 +39,6 @@ export const DatePickerStory: Story = {
     defaultValue: new Date('2024-10-31T00:00:00.000Z'),
     label: 'DatePicker label',
     onSelect: () => {},
-    // locale: ru,
   },
   name: 'DatePicker',
 

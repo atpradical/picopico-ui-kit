@@ -3,7 +3,6 @@ import { DayFlag, DayPicker, type DayPickerProps, SelectionState, UI } from 'rea
 
 import { CalendarSelect } from '@/components/date-picker/calendar-select'
 import { ArrowIosBackIcon, ArrowIosForwardIcon } from '@/icons'
-import { enUS } from 'date-fns/locale'
 
 import s from './Calendar.module.scss'
 
@@ -16,7 +15,7 @@ export const Calendar = ({
   className,
   classNames,
   fixedWeeks = true,
-  locale = enUS,
+  locale,
   weekStartsOn = WeekDays.Monday,
   ...rest
 }: DayPickerProps) => {

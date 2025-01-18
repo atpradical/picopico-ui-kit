@@ -5,6 +5,7 @@ import { Button, Calendar, Popover, Typography, useDatePicker } from '@/componen
 import { Content, Trigger } from '@radix-ui/react-popover'
 import clsx from 'clsx'
 import { format } from 'date-fns'
+import { enUS, ru } from 'react-day-picker/locale'
 
 import s from './DatePicker.module.scss'
 
@@ -14,6 +15,7 @@ export type DatePickerProps = {
   errorText?: string
   isRequired?: boolean
   label?: string
+  localeString?: string
   onSelect: (date?: Date) => void
   selected?: Date | undefined
 } & Omit<PropsSingle, 'mode'>
@@ -24,6 +26,7 @@ export const DatePicker = ({
   errorText,
   isRequired,
   label,
+  localeString,
   onSelect,
   selected,
   ...rest
@@ -42,6 +45,8 @@ export const DatePicker = ({
     }
   }, [selected])
 
+  const localeCode = localeString === 'ru' ? ru : enUS
+
   return (
     <div className={s.container}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
@@ -50,13 +55,14 @@ export const DatePicker = ({
       <Popover onOpenChange={setIsOpen} open={isOpen}>
         <Trigger asChild className={s.trigger} disabled={disabled} title={'open calendar'}>
           <Button className={clsx(s.button, errorText && s.error)} id={id} variant={'icon'}>
-            {selected ? format(selected, 'P') : <span>Pick a date</span>}
+            {selected ? format(selected, 'P', { locale: localeCode }) : <span>Pick a date</span>}
             {triggerIcon}
           </Button>
         </Trigger>
         <Content align={'start'} className={s.popoverContent}>
           <Calendar
             autoFocus
+            locale={localeCode}
             mode={'single'}
             month={month} // Управляем текущим месяцем
             onMonthChange={setMonth} // Обновляем месяц при изменении

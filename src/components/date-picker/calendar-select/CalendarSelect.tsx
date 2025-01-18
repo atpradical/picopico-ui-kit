@@ -5,7 +5,7 @@ import { ScrollArea, ScrollBar } from '@/components'
 import { ArrowIosDownOutlineIcon } from '@/icons'
 import * as RDXS from '@radix-ui/react-select'
 
-import s from '@/components/select/Select.module.scss'
+import s from './CalendarSelect.module.scss'
 
 type CalendarSelectProps = {
   options?: DropdownOption[]

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { DateRange } from 'react-day-picker'
 
 import { Meta, StoryObj } from '@storybook/react'
-import { enUS, ru } from 'date-fns/locale'
 
 import { DatePickerRange } from './DatePickerRange'
 
@@ -13,7 +12,7 @@ const meta = {
         type: 'boolean',
       },
     },
-    error: {
+    errorText: {
       control: {
         type: 'text',
       },
@@ -36,36 +35,23 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const DatePickerRangeStoryEN: Story = {
+export const DatePickerRangeStory: Story = {
   args: {
     label: 'DatePicker label',
-    locale: enUS,
-    onSelectRangeDate: () => {},
+    onSelect: () => {},
   },
-  name: 'DatePicker Range EN',
+  name: 'DatePicker Range',
 
   render: args => {
     // remove onSelectRangeDate from args to avoid passing it to DatePicker for storybook
-    const { onSelectRangeDate, ...rest } = args
-    const [selectedDate, setSelectedDate] = useState<DateRange | undefined>()
+    const { onSelect, ...rest } = args
+    // State Example:
+    // {
+    //       from: new Date(2022, 0, 20),
+    //       to: addDays(new Date(2022, 0, 20), 20),
+    //     }
+    const [date, setDate] = useState<DateRange | undefined>()
 
-    return <DatePickerRange onSelectRangeDate={setSelectedDate} selected={selectedDate} {...rest} />
-  },
-}
-
-export const DatePickerRangeStoryRU: Story = {
-  args: {
-    label: 'DatePicker label',
-    locale: ru,
-    onSelectRangeDate: () => {},
-  },
-  name: 'DatePicker Range RU',
-
-  render: args => {
-    // remove onSelectRangeDate from args to avoid passing it to DatePicker for storybook
-    const { onSelectRangeDate, ...rest } = args
-    const [selectedDate, setSelectedDate] = useState<DateRange | undefined>()
-
-    return <DatePickerRange onSelectRangeDate={setSelectedDate} selected={selectedDate} {...rest} />
+    return <DatePickerRange onSelect={setDate} selected={date} {...rest} />
   },
 }

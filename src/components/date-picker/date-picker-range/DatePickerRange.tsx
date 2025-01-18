@@ -45,14 +45,7 @@ export const DatePickerRange = ({
           </Button>
         </Trigger>
         <Content align={'start'} className={s.popoverContent}>
-          <Calendar
-            autoFocus
-            mode={'range'}
-            numberOfMonths={1}
-            onSelect={onSelect}
-            selected={selected}
-            {...rest}
-          />
+          <Calendar autoFocus mode={'range'} onSelect={onSelect} selected={selected} {...rest} />
         </Content>
       </Popover>
       {!!errorText && (

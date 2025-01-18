@@ -16,8 +16,8 @@
   padding: var(--padding-select-standard);
 
   text-align: center;
-  background-color: var(--color-dark-700);
 
+  background-color: var(--color-dark-700);
   border: var(--border-size-standard) solid var(--color-dark-100);
 
   &[data-state='open'] .icon {
@@ -46,7 +46,6 @@
 
 .content {
   width: var(--radix-select-trigger-width);
-  //max-height: var(--radix-select-content-available-height);
   max-height: 200px;
 
   background: var(--color-dark-900);

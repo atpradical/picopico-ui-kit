@@ -59,6 +59,8 @@ export const Calendar = ({
         Dropdown: props => {
           const { className, classNames, options, ...selectProps } = props
 
+          console.log('selectProps is ', selectProps)
+
           return (
             <span data-disabled={selectProps.disabled}>
               <select className={s.select} {...selectProps} defaultValue={selectProps.value}>

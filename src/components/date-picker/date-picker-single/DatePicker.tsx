@@ -45,7 +45,7 @@ export const DatePicker = ({
           </Button>
         </Trigger>
         <Content align={'start'} className={s.popoverContent}>
-          <Calendar autoFocus mode={'single'} onSelect={onSelect} selected={selected} {...rest} />
+          <Calendar mode={'single'} onSelect={onSelect} selected={selected} {...rest} />
         </Content>
       </Popover>
       {!!errorText && (

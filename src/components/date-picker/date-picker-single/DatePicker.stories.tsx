@@ -34,31 +34,14 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const DatePickerStoryEN: Story = {
-  args: {
-    defaultValue: new Date('2024-10-31T00:00:00.000Z'),
-    label: 'DatePicker label',
-    onSelect: () => {},
-  },
-  name: 'DatePicker EN',
-
-  render: args => {
-    // remove onSelectSingleDate from args to avoid passing it to DatePicker for storybook
-    const { onSelect, ...rest } = args
-    const [selectedDate, setSelectedDate] = useState<Date | undefined>()
-
-    return <DatePicker onSelect={setSelectedDate} selected={selectedDate} {...rest} />
-  },
-}
-
-export const DatePickerStoryRU: Story = {
+export const DatePickerStory: Story = {
   args: {
     defaultValue: new Date('2024-10-31T00:00:00.000Z'),
     label: 'DatePicker label',
     onSelect: () => {},
     // locale: ru,
   },
-  name: 'DatePicker RU',
+  name: 'DatePicker',
 
   render: args => {
     // remove onSelectSingleDate from args to avoid passing it to DatePicker for storybook

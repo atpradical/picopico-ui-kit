@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { PropsSingle } from 'react-day-picker'
 
 import { Button, Calendar, Popover, Typography, useDatePicker } from '@/components'
@@ -13,7 +14,7 @@ export type DatePickerProps = {
   errorText?: string
   isRequired?: boolean
   label?: string
-  onSelect: (date: Date | undefined) => void
+  onSelect: (date?: Date) => void
   selected?: Date | undefined
 } & Omit<PropsSingle, 'mode'>
 
@@ -32,6 +33,15 @@ export const DatePicker = ({
     errorText,
   })
 
+  const [month, setMonth] = useState<Date | undefined>(selected)
+
+  // Синхронизируем месяц с выбранной датой
+  useEffect(() => {
+    if (selected) {
+      setMonth(selected)
+    }
+  }, [selected])
+
   return (
     <div className={s.container}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
@@ -45,7 +55,15 @@ export const DatePicker = ({
           </Button>
         </Trigger>
         <Content align={'start'} className={s.popoverContent}>
-          <Calendar mode={'single'} onSelect={onSelect} selected={selected} {...rest} />
+          <Calendar
+            autoFocus
+            mode={'single'}
+            month={month} // Управляем текущим месяцем
+            onMonthChange={setMonth} // Обновляем месяц при изменении
+            onSelect={onSelect}
+            selected={selected}
+            {...rest}
+          />
         </Content>
       </Popover>
       {!!errorText && (

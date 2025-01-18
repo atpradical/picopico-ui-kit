@@ -1,46 +1,31 @@
 import { ElementRef, forwardRef } from 'react'
-import { Locale, PropsSingle } from 'react-day-picker'
+import { PropsSingle } from 'react-day-picker'
 
-import { Calendar, Typography, useDatePicker } from '@/components'
+import { Button, Calendar, Popover, Typography, useDatePicker } from '@/components'
 import { TextField } from '@/components/text-field'
-import { Content, Portal, Root, Trigger } from '@radix-ui/react-popover'
+import { Content, Trigger } from '@radix-ui/react-popover'
 import clsx from 'clsx'
+import { format } from 'date-fns'
 
 import s from './DatePicker.module.scss'
 
 export type DatePickerProps = {
-  defaultValue?: Date | undefined
+  defaultValue?: Date
   disabled?: boolean
   errorText?: string
   isRequired?: boolean
   label?: string
-  locale?: Locale
-  onSelectSingleDate: (date: Date | undefined) => void
+  onSelect: (date: Date | undefined) => void
   selected?: Date | undefined
 } & Omit<PropsSingle, 'mode'>
 
 type DatePickerRef = ElementRef<typeof TextField>
 
 export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
-  (
-    { defaultValue, disabled, errorText, isRequired, label, onSelectSingleDate, selected, ...rest },
-    ref
-  ) => {
-    const {
-      dayPickerSingleHandler,
-      id,
-      inputSingleDateChangeHandler,
-      inputValue,
-      isOpen,
-      month,
-      setIsOpen,
-      setMonth,
-      triggerIcon,
-    } = useDatePicker({
-      defaultValue,
+  ({ defaultValue, disabled, errorText, isRequired, label, onSelect, selected, ...rest }, _) => {
+    const { id, isOpen, setIsOpen, triggerIcon } = useDatePicker({
       disabled,
       errorText,
-      onSelectSingleDate,
     })
 
     return (
@@ -48,34 +33,29 @@ export const DatePicker = forwardRef<DatePickerRef, DatePickerProps>(
         <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
           {label}
         </Typography>
-        <div className={s.inputContainer}>
-          <TextField
-            autoComplete={'off'}
-            className={clsx(errorText && s.error)}
-            disabled={disabled}
-            errorText={errorText}
-            onChange={inputSingleDateChangeHandler}
-            ref={ref}
-            value={inputValue}
-          />
-          <Root onOpenChange={setIsOpen} open={isOpen}>
-            <Trigger className={s.trigger} disabled={disabled} id={id} title={'open calendar'}>
+        <Popover onOpenChange={setIsOpen} open={isOpen}>
+          <Trigger asChild className={s.trigger} disabled={disabled} title={'open calendar'}>
+            <Button className={clsx(s.button, errorText && s.error)} id={id} variant={'icon'}>
+              {selected ? format(selected, 'P') : <span>Pick a date</span>}
               {triggerIcon}
-            </Trigger>
-            <Portal>
-              <Content align={'start'} avoidCollisions sideOffset={-16}>
-                <Calendar
-                  mode={'single'}
-                  month={month}
-                  onMonthChange={setMonth}
-                  onSelect={dayPickerSingleHandler}
-                  selected={selected}
-                  {...rest}
-                />
-              </Content>
-            </Portal>
-          </Root>
-        </div>
+            </Button>
+          </Trigger>
+          <Content align={'start'} className={s.popoverContent}>
+            <Calendar
+              autoFocus
+              mode={'single'}
+              onSelect={onSelect}
+              selected={selected}
+              {...rest}
+              // ref={ref}
+            />
+          </Content>
+        </Popover>
+        {!!errorText && (
+          <Typography as={'span'} variant={'error'}>
+            {errorText}
+          </Typography>
+        )}
       </div>
     )
   }

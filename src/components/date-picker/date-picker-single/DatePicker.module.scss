@@ -22,7 +22,6 @@
   line-height: var(--line-height-m);
   color: var(--color-light-100);
 
-
   border: 1px solid var(--color-dark-300);
 
   &:hover {
@@ -38,7 +37,8 @@
     border: 1px solid var(--color-dark-300);
   }
 
-  &:focus, :focus-within {
+  &:focus,
+  :focus-within {
     border: 1px solid var(--color-accent-700);
   }
 

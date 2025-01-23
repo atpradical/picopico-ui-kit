@@ -120,3 +120,10 @@ export const IconAsButton: Story = {
     variant: 'icon',
   },
 }
+
+export const ButtonWithSpinner: Story = {
+  args: {
+    isLoading: true,
+    spinnerProps: { color: 'red' },
+  },
+}

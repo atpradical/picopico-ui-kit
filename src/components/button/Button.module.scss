@@ -64,6 +64,18 @@
     color: var(--color-light-900);
     background-color: var(--color-dark-500);
   }
+
+  // Если кнопка в состоянии загрузки
+  &.isLoading {
+    pointer-events: none; // Отключаем взаимодействие
+    cursor: default; // Убираем курсор-указатель
+    opacity: 0.7; // Делаем кнопку полупрозрачной (опционально)
+
+    // Убираем фокус
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .outlined {
@@ -161,8 +173,9 @@
     background-repeat: no-repeat;
     background-position: 50%;
 
-    transition: transform 0.5s,
-    opacity 1s;
+    transition:
+      transform 0.5s,
+      opacity 1s;
   }
 
   &:active::after {

@@ -3,6 +3,7 @@ import { CSSProperties, ComponentPropsWithoutRef, forwardRef } from 'react'
 import { Typography } from '@/components'
 
 import s from './Spinner.module.scss' // Импорт SCSS модуля
+import clsx from 'clsx'
 
 type SpinnerProps = {
   /**
@@ -10,6 +11,7 @@ type SpinnerProps = {
    * @default 'currentColor'
    */
   color?: string
+  containerClassName?: string
   /**
    * Лейбл для спиннера*/
   label?: string
@@ -26,7 +28,18 @@ type SpinnerProps = {
 } & ComponentPropsWithoutRef<'div'>
 
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
-  ({ className, color = 'currentColor', label, size = 24, speed = 1, ...props }, ref) => {
+  (
+    {
+      className,
+      color = 'currentColor',
+      containerClassName,
+      label,
+      size = 24,
+      speed = 1,
+      ...props
+    },
+    ref
+  ) => {
     // Динамически задаем CSS-переменные
     const spinnerStyle = {
       '--spinner-speed': `${speed}s`, // Передаем скорость анимации в CSS
@@ -36,7 +49,7 @@ export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
     } as CSSProperties
 
     return (
-      <div className={s.container}>
+      <div className={clsx(s.container, containerClassName)}>
         <div
           aria-label={'Loading'}
           className={`${s.spinner} ${className || ''}`} // Используем класс из SCSS модуля

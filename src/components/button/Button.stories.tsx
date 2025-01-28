@@ -35,11 +35,20 @@ const meta = {
     },
     variant: {
       control: { type: 'inline-radio' },
-      options: ['primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon'],
+      options: [
+        'primary',
+        'secondary',
+        'outlined',
+        'nb-outlined',
+        'link',
+        'danger',
+        'icon',
+        'danger-outlined',
+      ],
       table: {
         defaultValue: { summary: 'primary' },
         type: {
-          detail: `primary', 'secondary', 'outlined', 'nb-outlined', 'link', 'danger', 'icon`,
+          detail: `primary', 'secondary', 'outlined',  'nb-outlined', 'link', 'danger', 'danger-outlined', 'icon`,
           summary: 'string',
         },
       },

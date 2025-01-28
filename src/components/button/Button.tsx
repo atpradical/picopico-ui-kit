@@ -20,7 +20,14 @@ export type ButtonProps<T extends ElementType = 'button'> = {
   isLoading?: boolean
   ripple?: boolean
   spinnerProps?: ComponentProps<typeof Spinner>
-  variant?: 'icon' | 'link' | 'nb-outlined' | 'outlined' | 'primary' | 'secondary'
+  variant?:
+    | 'danger-outlined'
+    | 'icon'
+    | 'link'
+    | 'nb-outlined'
+    | 'outlined'
+    | 'primary'
+    | 'secondary'
 } & ComponentPropsWithoutRef<T>
 
 export const Button = forwardRef(

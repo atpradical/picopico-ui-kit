@@ -13,7 +13,7 @@ const PolaroidIllustration = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGEle
       d={
         'M518.014 606H22.986A23.01 23.01 0 0 1 0 583.014V22.986A23.01 23.01 0 0 1 22.986 0h495.028A23.01 23.01 0 0 1 541 22.986v560.028A23.01 23.01 0 0 1 518.014 606'
       }
-      fill={'#0d0d0d'}
+      fill={'#19191c'}
     />
     <path
       d={

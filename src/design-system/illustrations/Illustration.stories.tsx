@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 
 import {
+  PolaroidIllustration,
   SignUpConfirmedIllustration,
   SignUpIllustration,
   TimeManagementIllustration,
@@ -24,4 +25,7 @@ export const SignUp: Story = {
 
 export const TimeManagement: Story = {
   render: () => <TimeManagementIllustration />,
+}
+export const Polaroid: Story = {
+  render: () => <PolaroidIllustration />,
 }

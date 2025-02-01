@@ -128,6 +128,7 @@ export const Pagination = memo((props: Props) => {
             {textShow}
           </Typography>
           <Select
+            className={s.selectTrigger}
             defaultValue={defaultSelectValue}
             onValueChange={onSelectValueChange}
             options={selectOptions}

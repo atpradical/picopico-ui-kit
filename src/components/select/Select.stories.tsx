@@ -59,19 +59,19 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const selectItems: OptionsValue[] = [
-  { option: 'apple', value: 'apple' },
-  { option: 'banana', value: 'banana' },
-  { option: 'orange', value: 'orange' },
-  { option: 'mango', value: 'mango' },
-  { option: 'coconut', value: 'coconut' },
-  { option: 'tomato', value: 'tomato' },
-  { option: 'grape', value: 'grape' },
-  { option: 'pineapple', value: 'pineapple' },
+  { label: 'apple', value: 'apple' },
+  { label: 'banana', value: 'banana' },
+  { label: 'orange', value: 'orange' },
+  { label: 'mango', value: 'mango' },
+  { label: 'coconut', value: 'coconut' },
+  { label: 'tomato', value: 'tomato' },
+  { label: 'grape', value: 'grape' },
+  { label: 'pineapple', value: 'pineapple' },
 ]
 
 const selectItemsWithIcons: OptionsValue[] = [
-  { icon: <FlagRussiaIcon />, option: 'Russian', value: 'Russian' },
-  { icon: <FlagUnitedKingdomIcon />, option: 'English', value: 'English' },
+  { icon: <FlagRussiaIcon />, label: 'Russian', value: 'Russian' },
+  { icon: <FlagUnitedKingdomIcon />, label: 'English', value: 'English' },
 ]
 
 export const Default: Story = {

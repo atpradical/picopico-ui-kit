@@ -9,7 +9,7 @@ import s from './Select.module.scss'
 
 export type OptionsValue = {
   icon?: ReactNode
-  option: string
+  label: string
   value: string
 }
 export type SelectProps = {
@@ -39,13 +39,13 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
       <RDXS.SelectItem
         className={s.selectItem}
         key={item.value + index}
-        textValue={item.option}
+        textValue={item.label}
         value={item.value}
       >
         <RDXS.ItemText asChild>
           <div className={s.option}>
             {item.icon}
-            {item.option}
+            {item.label}
           </div>
         </RDXS.ItemText>
       </RDXS.SelectItem>

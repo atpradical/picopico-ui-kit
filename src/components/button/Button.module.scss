@@ -136,7 +136,7 @@
 
   &:focus-visible {
     background-color: var(--color-danger-500);
-     outline: var(--outline-size-standard) solid var(--color-danger-700);
+    outline: var(--outline-size-standard) solid var(--color-danger-700);
   }
 
   &:disabled {
@@ -148,7 +148,7 @@
   border: var(--border-size-standard) solid var(--color-danger-500);
 
   &:hover {
-     color: var(--color-danger-100);
+    color: var(--color-danger-100);
     border-color: var(--color-danger-100);
   }
 
@@ -167,12 +167,12 @@
   }
 }
 
-.danger, .danger-outlined {
+.danger,
+.danger-outlined {
   &:disabled {
     color: var(--color-light-900);
   }
 }
-
 
 .fullWidth {
   width: 100%;
@@ -202,8 +202,9 @@
     background-repeat: no-repeat;
     background-position: 50%;
 
-    transition: transform 0.5s,
-    opacity 1s;
+    transition:
+      transform 0.5s,
+      opacity 1s;
   }
 
   &:active::after {

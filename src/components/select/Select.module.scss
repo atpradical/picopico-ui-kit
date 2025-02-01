@@ -1,4 +1,5 @@
 .icon {
+  flex-shrink: 0;
   width: var(--icon-size-m);
   height: var(--icon-size-m);
   margin-left: 12px;
@@ -12,6 +13,7 @@
   justify-content: space-between;
 
   width: 100%;
+  min-width: fit-content;
   height: var(--select-height-standard);
   padding: var(--padding-select-standard);
 

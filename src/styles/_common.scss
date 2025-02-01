@@ -43,6 +43,22 @@
   /* badge padding sizes */
   --badge-standard: 2px;
 
-  /* select height size */
+  /* select height sizes */
   --select-height-standard: 36px;
+
+  /* Transition settings */
+  --transition-duration-slow: 1s;
+  --transition-duration-default: 0.3s;
+  --transition-duration-fast: 0.1s;
+
+  /* Arrow sizes */
+  --arrow-size-xs: 8px;
+  --arrow-size-s: 16px;
+  --arrow-size-m: 24px;
+
+  /* gap sizes */
+  --gap-xs: 6px;
+  --gap-s: 8px;
+  --gap-m: 10px;
+  --gap-l: 12px;
 }

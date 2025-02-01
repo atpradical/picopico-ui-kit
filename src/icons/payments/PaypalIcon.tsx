@@ -1,6 +1,8 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-const PaypalIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+type IconProps = { isDark: boolean } & SVGProps<SVGSVGElement>
+
+const PaypalIcon = ({ isDark, ...props }: IconProps, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'16'}
@@ -13,7 +15,7 @@ const PaypalIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => 
     <defs>
       <clipPath id={'paypal_svg__a'}>
         <rect
-          fill={'#fff'}
+          fill={isDark ? 'transparent' : '#fff'}
           fillOpacity={0}
           height={15}
           rx={-0.5}
@@ -28,13 +30,13 @@ const PaypalIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => 
         d={
           'M22.52 0H1.47C.65 0 0 .64 0 1.43v13.13C0 15.35.65 16 1.47 16h21.05c.82 0 1.48-.65 1.48-1.44V1.43C24 .64 23.34 0 22.52 0'
         }
-        fill={'#FFF'}
+        fill={isDark ? '#171717' : '#FFF'}
       />
       <path
         d={
           'M1.47 0h21.05C23.34 0 24 .64 24 1.43v13.13c0 .79-.66 1.44-1.48 1.44H1.47C.65 16 0 15.35 0 14.56V1.43C0 .64.65 0 1.47 0m0 1h21.05q.12 0 .21.04.07.03.14.09.07.07.1.16.03.07.03.14v13.13q0 .07-.03.14-.03.09-.1.16-.07.06-.14.09-.09.05-.21.05H1.47q-.12 0-.21-.05-.07-.03-.14-.09-.07-.07-.1-.16-.02-.07-.02-.14V1.43q0-.07.02-.14.03-.09.1-.16.07-.06.14-.09.09-.04.21-.04'
         }
-        fill={'#F3F3F3'}
+        fill={isDark ? 'transparent' : '#F3F3F3'}
         fillRule={'evenodd'}
       />
       <path

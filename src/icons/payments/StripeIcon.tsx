@@ -1,6 +1,8 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-const StripeIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+type IconProps = { isDark: boolean } & SVGProps<SVGSVGElement>
+
+const StripeIcon = ({ isDark, ...props }: IconProps, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'16'}
@@ -13,7 +15,7 @@ const StripeIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => 
     <defs>
       <clipPath id={'stripe_svg__a'}>
         <rect
-          fill={'#fff'}
+          fill={isDark ? 'transparent' : '#fff'}
           fillOpacity={0}
           height={15}
           rx={-0.5}
@@ -28,13 +30,13 @@ const StripeIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => 
         d={
           'M22.08 0H1.91C.85 0 0 .83 0 1.87v12.25C0 15.16.85 16 1.91 16h20.17c1.06 0 1.92-.84 1.92-1.88V1.87C24 .83 23.14 0 22.08 0'
         }
-        fill={'#FFF'}
+        fill={isDark ? '#171717' : '#fff'}
       />
       <path
         d={
           'M1.91 0h20.17C23.14 0 24 .83 24 1.87v12.25c0 1.04-.86 1.88-1.92 1.88H1.91C.85 16 0 15.16 0 14.12V1.87C0 .83.85 0 1.91 0m0 1h20.17q.13 0 .24.03.07.01.12.04.09.03.17.09.07.04.13.1.14.14.2.3.06.14.06.31v12.25q0 .17-.06.31-.06.16-.2.3-.06.06-.13.1-.08.06-.17.09-.05.03-.12.04-.11.04-.24.04H1.91q-.13 0-.24-.04-.07-.01-.12-.04-.09-.03-.17-.09-.07-.04-.13-.1-.14-.14-.2-.3-.05-.14-.05-.31V1.87q0-.17.05-.31.06-.16.2-.3.06-.06.13-.1.08-.06.17-.09.05-.03.12-.04.11-.03.24-.03'
         }
-        fill={'#F3F3F3'}
+        fill={isDark ? 'transparent' : '#F3F3F3'}
         fillRule={'evenodd'}
       />
       <path

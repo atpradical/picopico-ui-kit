@@ -49,6 +49,10 @@
   height: var(--arrow-size-s);
 }
 
+.selectTrigger {
+  padding: 4px 6px;
+}
+
 .dots {
   pointer-events: none;
   cursor: default;

@@ -1,8 +1,8 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-type IconProps = { isDark: boolean } & SVGProps<SVGSVGElement>
+type IconProps = { isDark?: boolean } & SVGProps<SVGSVGElement>
 
-const PaypalIcon = ({ isDark, ...props }: IconProps, ref: Ref<SVGSVGElement>) => (
+const PaypalIcon = ({ isDark = false, ...props }: IconProps, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'16'}

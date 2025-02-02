@@ -29,18 +29,19 @@ const TableFooter = forwardRef<ElementRef<'tfoot'>, ComponentPropsWithoutRef<'tf
   }
 )
 
-const TableRow = forwardRef<ElementRef<'tr'>, ComponentPropsWithoutRef<'tr'>>(
-  ({ className, ...props }, ref) => {
-    return <tr className={clsx(s.tableRow, className)} {...props} ref={ref} />
-  }
-)
+type TableRowProps = ComponentPropsWithoutRef<'tr'>
+type TableHeadRef = ElementRef<'tr'>
+
+const TableRow = forwardRef<TableHeadRef, TableRowProps>(({ className, ...props }, ref) => {
+  return <tr className={clsx(s.tableRow, className)} {...props} ref={ref} />
+})
 
 type TableHeadProps = {
   textAlign?: 'center' | 'left' | 'right'
 } & ComponentPropsWithoutRef<'th'>
-type TableHeadRef = ElementRef<'th'>
+type TableRowRef = ElementRef<'th'>
 
-const TableHead = forwardRef<TableHeadRef, TableHeadProps>(
+const TableHead = forwardRef<TableRowRef, TableHeadProps>(
   ({ className, textAlign = 'center', ...props }, ref) => {
     return (
       <th

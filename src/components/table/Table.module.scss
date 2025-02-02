@@ -27,7 +27,7 @@
   &:hover {
     // Применяем стили ко всем ячейкам, кроме <th>
     :not(th) {
-      background-color: var(--color-dark-700);
+      background-color: rgb(35 78 153 / 20%);
     }
   }
 }

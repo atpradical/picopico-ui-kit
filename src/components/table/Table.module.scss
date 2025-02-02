@@ -23,6 +23,13 @@
 
 .tableRow {
   border: var(--border-size-standard) solid var(--color-dark-500);
+
+  &:hover {
+    // Применяем стили ко всем ячейкам, кроме <th>
+    :not(th) {
+      background-color: var(--color-dark-700);
+    }
+  }
 }
 
 .left {

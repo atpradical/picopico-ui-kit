@@ -1,9 +1,9 @@
 .container {
   display: flex;
   flex-direction: row;
+  gap: 12px;
   align-items: center;
   justify-content: flex-start;
-  gap: 12px;
 }
 
 .root {
@@ -39,9 +39,14 @@
   border-radius: var(--border-radius-rounded);
 }
 
-.s {
+.xs {
   width: 36px;
   height: 36px;
+}
+
+.s {
+  width: 48px;
+  height: 48px;
 }
 
 .m {
@@ -71,6 +76,6 @@
 
 .avatar {
   font-size: var(--font-size-m);
-  line-height: var(--line-height-m);
   font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-m);
 }

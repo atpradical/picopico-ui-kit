@@ -1,5 +1,6 @@
 .table {
   border-collapse: collapse;
+  width: 100%;
   color: var(--color-light-100);
 }
 
@@ -22,4 +23,16 @@
 
 .tableRow {
   border: var(--border-size-standard) solid var(--color-dark-500);
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }

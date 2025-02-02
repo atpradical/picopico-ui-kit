@@ -10,11 +10,12 @@ const Table = forwardRef<ElementRef<'table'>, ComponentPropsWithoutRef<'table'>>
   }
 )
 
-const TableHeader = forwardRef<ElementRef<'thead'>, ComponentPropsWithoutRef<'thead'>>(
-  ({ className, ...props }, ref) => {
-    return <thead className={clsx(s.header)} {...props} ref={ref} />
-  }
-)
+type TableHeaderProps = ComponentPropsWithoutRef<'thead'>
+type TableHeaderRef = ElementRef<'thead'>
+
+const TableHeader = forwardRef<TableHeaderRef, TableHeaderProps>(({ className, ...props }, ref) => {
+  return <thead className={clsx(s.header)} {...props} ref={ref} />
+})
 
 const TableBody = forwardRef<ElementRef<'tbody'>, ComponentPropsWithoutRef<'tbody'>>(
   ({ className, ...props }, ref) => {
@@ -34,15 +35,31 @@ const TableRow = forwardRef<ElementRef<'tr'>, ComponentPropsWithoutRef<'tr'>>(
   }
 )
 
-const TableHead = forwardRef<ElementRef<'th'>, ComponentPropsWithoutRef<'th'>>(
-  ({ className, ...props }, ref) => {
-    return <th className={clsx(s.tableHead, className)} {...props} ref={ref} />
+type TableHeadProps = {
+  textAlign?: 'center' | 'left' | 'right'
+} & ComponentPropsWithoutRef<'th'>
+type TableHeadRef = ElementRef<'th'>
+
+const TableHead = forwardRef<TableHeadRef, TableHeadProps>(
+  ({ className, textAlign = 'center', ...props }, ref) => {
+    return (
+      <th
+        className={clsx(s.tableHead, textAlign && s[textAlign], className)}
+        {...props}
+        ref={ref}
+      />
+    )
   }
 )
 
-const TableCell = forwardRef<ElementRef<'td'>, ComponentPropsWithoutRef<'td'>>(
-  ({ className, ...props }, ref) => {
-    return <td className={clsx(s.cell, className)} {...props} ref={ref} />
+type TableCellProps = {
+  textAlign?: 'center' | 'left' | 'right'
+} & ComponentPropsWithoutRef<'td'>
+type TableCellRef = ElementRef<'td'>
+
+const TableCell = forwardRef<TableCellRef, TableCellProps>(
+  ({ className, textAlign = 'center', ...props }, ref) => {
+    return <td className={clsx(s.cell, s[textAlign], className)} {...props} ref={ref} />
   }
 )
 

@@ -18,13 +18,13 @@ const PaypalIcon = ({ isDark = false, ...props }: IconProps, ref: Ref<SVGSVGElem
           fill={isDark ? 'transparent' : '#fff'}
           fillOpacity={0}
           height={15}
-          rx={-0.5}
+          rx={0.5}
           transform={'translate(.5 .5)'}
           width={23}
         />
       </clipPath>
     </defs>
-    <rect fill={'none'} height={15} rx={-0.5} transform={'translate(.5 .5)'} width={23} />
+    <rect fill={'none'} height={15} rx={0.5} transform={'translate(.5 .5)'} width={23} />
     <g clipPath={'url(#paypal_svg__a)'}>
       <path
         d={

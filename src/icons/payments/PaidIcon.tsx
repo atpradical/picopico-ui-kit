@@ -16,7 +16,7 @@ const PaidIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
           fill={'#fff'}
           fillOpacity={0}
           height={15}
-          rx={-0.5}
+          rx={0.5}
           transform={'translate(4.5 4.5)'}
           width={15}
         />
@@ -29,7 +29,7 @@ const PaidIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
       fill={'#397DF6'}
       fillRule={'evenodd'}
     />
-    <rect fill={'none'} height={15} rx={-0.5} transform={'translate(4.5 4.5)'} width={15} />
+    <rect fill={'none'} height={15} rx={0.5} transform={'translate(4.5 4.5)'} width={15} />
     <g clipPath={'url(#paid_svg__a)'} fill={'#FFF'}>
       <path
         d={

@@ -14,6 +14,7 @@ export type OptionsValue = {
 }
 export type SelectProps = {
   className?: string
+  isSmall?: boolean
   label?: string
   options?: OptionsValue[]
   placeholder?: string
@@ -25,6 +26,7 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
       className,
       defaultValue,
       disabled,
+      isSmall = false,
       label,
       onValueChange,
       options = [],
@@ -45,7 +47,7 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
         <RDXS.ItemText asChild>
           <div className={s.option}>
             {item.icon}
-            {item.label}
+            {!isSmall && item.label}
           </div>
         </RDXS.ItemText>
       </RDXS.SelectItem>
@@ -68,7 +70,7 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
           <RDXS.Trigger className={clsx(s.trigger, className)} ref={ref}>
             <RDXS.Value placeholder={placeholder} />
             <RDXS.Icon asChild>
-              <ArrowIosDownOutlineIcon className={s.icon} />
+              <ArrowIosDownOutlineIcon className={clsx(s.icon, isSmall && s.iconSmall)} />
             </RDXS.Icon>
           </RDXS.Trigger>
           <RDXS.Portal>

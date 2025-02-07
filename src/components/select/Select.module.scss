@@ -5,6 +5,12 @@
   margin-left: 12px;
 }
 
+.iconSmall {
+  width: var(--icon-size-xs);
+  height: var(--icon-size-xs);
+  margin-left: 4px;
+}
+
 .trigger {
   cursor: pointer;
 

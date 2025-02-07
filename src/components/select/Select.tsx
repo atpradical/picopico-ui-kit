@@ -67,7 +67,7 @@ export const Select = forwardRef<ElementRef<typeof RDXS.Trigger>, SelectProps>(
               {label}
             </Typography>
           )}
-          <RDXS.Trigger className={clsx(s.trigger, className)} ref={ref}>
+          <RDXS.Trigger className={clsx(s.trigger, isSmall && s.triggerSmall, className)} ref={ref}>
             <RDXS.Value placeholder={placeholder} />
             <RDXS.Icon asChild>
               <ArrowIosDownOutlineIcon className={clsx(s.icon, isSmall && s.iconSmall)} />

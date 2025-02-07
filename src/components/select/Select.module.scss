@@ -47,6 +47,12 @@
   }
 }
 
+.triggerSmall {
+  width: fit-content;
+  padding: 0 6px;
+  border: none;
+}
+
 .disabled,
 .trigger:disabled {
   opacity: 0.5;

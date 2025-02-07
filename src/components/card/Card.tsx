@@ -8,7 +8,7 @@ type InferType<T> = T extends ElementType<infer U> ? U : never
 
 type CardProps<T extends ElementType = 'div'> = {
   as?: T
-  variant?: 'default' | 'transparent'
+  variant?: 'default' | 'semi-transparent' | 'transparent'
 } & ComponentPropsWithoutRef<T>
 
 export const Card = forwardRef(

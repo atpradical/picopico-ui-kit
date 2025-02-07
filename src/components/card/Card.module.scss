@@ -1,6 +1,6 @@
 .card {
-  padding: var(--padding-card-standard);
   width: 100%;
+  padding: var(--padding-card-standard);
   border-radius: var(--border-radius-xs);
 }
 
@@ -9,6 +9,11 @@
   border: var(--border-size-standard) solid var(--color-dark-300);
 }
 
-.transparent {
+.semi-transparent {
   background-color: rgb(51 51 51 / 50%);
+}
+
+.transparent {
+  background-color: transparent;
+  border: none;
 }

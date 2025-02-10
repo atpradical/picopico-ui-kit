@@ -15,7 +15,7 @@ export const TabsDefault: Story = {
     return (
       <TabsRoot defaultValue={'tab1'}>
         <TabsList loop>
-          <TabsTrigger value={'tab1'}>{'General information'}</TabsTrigger>
+          <TabsTrigger value={'tab1'}>{'General information content'}</TabsTrigger>
           <TabsTrigger value={'tab2'}>{'Devices'}</TabsTrigger>
           <TabsTrigger value={'tab3'}>{'Payments'}</TabsTrigger>
         </TabsList>

@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
   padding: var(--padding-button-standard);
 
   font-family: inherit;
@@ -202,9 +203,8 @@
     background-repeat: no-repeat;
     background-position: 50%;
 
-    transition:
-      transform 0.5s,
-      opacity 1s;
+    transition: transform 0.5s,
+    opacity 1s;
   }
 
   &:active::after {

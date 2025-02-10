@@ -1,12 +1,11 @@
-.root {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.content {
+  margin-top: 30px;
 }
 
 .list {
-  flex-shrink: 0;
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trigger {
@@ -14,7 +13,11 @@
 
   cursor: pointer;
 
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
   padding: var(--padding-tabs-standard);
 
   font-family: var(--font-family-primary), sans-serif;
@@ -22,6 +25,7 @@
   font-weight: var(--font-weight-semi-bold);
   color: var(--color-dark-100);
   text-align: center;
+  text-wrap: nowrap;
 
   border-bottom: var(--border-size-bold) solid var(--color-dark-100);
 
@@ -39,8 +43,8 @@
 
   &[data-state='active'] {
     color: var(--color-accent-500);
+    background-color: rgb(115 165 255 / 15%);
     border-color: var(--color-accent-500);
-    background-color: rgba(115, 165, 255, 15%);
   }
 
   &[data-state='active']:disabled {
@@ -56,29 +60,33 @@
 
 .ripple {
   position: relative;
-  overflow: hidden;
   transform: translate3d(0, 0, 0);
+  overflow: hidden;
 
-  &:after {
+  &::after {
+    pointer-events: none;
     content: '';
-    display: block;
+
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none;
-    background-image: radial-gradient(circle, rgba(19, 48, 210, 0.6) 10%, transparent 10.01%);
+    transform: scale(10, 10);
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    background-image: radial-gradient(circle, rgb(19 48 210 / 60%) 10%, transparent 10.01%);
     background-repeat: no-repeat;
     background-position: 50%;
-    transform: scale(10, 10);
-    opacity: 0;
-    transition:
-      transform 0.5s,
-      opacity 1s;
+
+    transition: transform 0.5s,
+    opacity 1s;
   }
 
-  &:active:after {
+  &:active::after {
     transform: scale(0, 0);
     opacity: 0.3;
     transition: 0s;

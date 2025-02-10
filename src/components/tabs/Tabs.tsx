@@ -8,8 +8,8 @@ import s from './Tabs.module.scss'
 type TabsRootProps = ComponentPropsWithoutRef<typeof RDXT.Root>
 type TabsRootRef = ElementRef<typeof RDXT.Root>
 
-const TabsRoot = forwardRef<TabsRootRef, TabsRootProps>(({ className, ...props }, ref) => (
-  <RDXT.Root className={clsx(s.root, className)} ref={ref} {...props} />
+const TabsRoot = forwardRef<TabsRootRef, TabsRootProps>((props, ref) => (
+  <RDXT.Root ref={ref} {...props} />
 ))
 
 TabsRoot.displayName = RDXT.Root.displayName
@@ -36,7 +36,7 @@ type TabsContentProps = ComponentPropsWithoutRef<typeof RDXT.Content>
 type TabsContentRef = ElementRef<typeof RDXT.Content>
 
 const TabsContent = forwardRef<TabsContentRef, TabsContentProps>(({ className, ...props }, ref) => (
-  <RDXT.Content className={className} ref={ref} {...props} />
+  <RDXT.Content className={clsx(s.content, className)} ref={ref} {...props} />
 ))
 
 TabsContent.displayName = RDXT.Content.displayName

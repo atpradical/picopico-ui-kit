@@ -6,11 +6,11 @@ const meta = {
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['xs', 's', 'm', 'l', 'xl'],
+      options: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
       table: {
         defaultValue: { summary: 'm' },
         type: {
-          detail: `'xs', 's', 'm', 'l', 'xl'`,
+          detail: `'xs', 's', 'm', 'l', 'xl', 'xxl'`,
           summary: 'string',
         },
       },
@@ -40,9 +40,10 @@ const meta = {
 |----------|-------------|
 | \`xs\` | 36px        |
 | \`s\`  | 48px        |
-| \`m\`  | 192px        |
-| \`l\`  | 204px        |
-| \`xl\` | 316px        |
+| \`m\`  | 72px        |
+| \`l\`  | 192px        |
+| \`xl\`  | 204px        |
+| \`xxl\` | 316px        |
         `,
       },
     },

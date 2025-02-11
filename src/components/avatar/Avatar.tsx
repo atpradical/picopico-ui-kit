@@ -10,7 +10,7 @@ import s from './Avatar.module.scss'
 type AvatarProps = {
   showFallback?: boolean
   showUserName?: boolean
-  size?: 'l' | 'm' | 's' | 'xl' | 'xs'
+  size?: 'l' | 'm' | 's' | 'xl' | 'xs' | 'xxl'
   src?: string
   userName?: string
 } & ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>

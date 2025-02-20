@@ -203,8 +203,9 @@
     background-repeat: no-repeat;
     background-position: 50%;
 
-    transition: transform 0.5s,
-    opacity 1s;
+    transition:
+      transform 0.5s,
+      opacity 1s;
   }
 
   &:active::after {

@@ -2,7 +2,14 @@ import dummyImage2 from '@/assets/webp/Mask group.png'
 import dummyImage from '@/assets/webp/dummy-image.webp'
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Carousel } from './Carousel'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDotButton,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from './Carousel'
 
 const meta: Meta<typeof Carousel> = {
   argTypes: {},
@@ -13,16 +20,36 @@ const meta: Meta<typeof Carousel> = {
 export default meta
 type Story = StoryObj<typeof Carousel>
 
-const slides = [dummyImage, dummyImage2]
-
 export const DefaultStory: Story = {
-  args: {
-    slides: slides.map(i => i),
-  },
   name: 'Carousel',
-  render: args => (
-    <div style={{ height: '500px', width: '500px' }}>
-      <Carousel {...args} />
-    </div>
+  render: () => (
+    <Carousel style={{ height: '300px', width: '300px' }}>
+      <CarouselContent>
+        <CarouselItem>
+          <img
+            alt={'image'}
+            src={dummyImage}
+            style={{ height: '300px', objectFit: 'cover', width: '300px' }}
+          />
+        </CarouselItem>
+        <CarouselItem>
+          <img
+            alt={'image'}
+            src={dummyImage2}
+            style={{ height: '300px', objectFit: 'cover', width: '300px' }}
+          />
+        </CarouselItem>
+        <CarouselItem>
+          <img
+            alt={'image'}
+            src={dummyImage}
+            style={{ height: '300px', objectFit: 'cover', width: '300px' }}
+          />
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+      <CarouselDotButton />
+    </Carousel>
   ),
 }

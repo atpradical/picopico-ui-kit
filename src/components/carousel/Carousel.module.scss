@@ -1,64 +1,126 @@
-.carouselRoot {
-  --swiper-pagination-bullet-inactive-color: var(--color-light-100);
-  --swiper-pagination-bullet-inactive-opacity: 1;
-  --swiper-pagination-color: var(--color-accent-500);
-  --swiper-pagination-bullet-horizontal-gap: 6px;
-  --swiper-pagination-bottom: 12px;
+.carousel {
+  position: relative;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
+.overflowHidden {
+  overflow: hidden;
 }
 
-.slide {
+.carouselContent {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
 }
 
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.ml-4 {
+  margin-left: -1rem; // -ml-4 в Tailwind
 }
 
-.buttonsContainer {
+.mt-4 {
+  margin-top: -1rem; // -mt-4 в Tailwind
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.carouselItem {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.pl-4 {
+  padding-left: 1rem; // pl-4 в Tailwind
+}
+
+.pt-4 {
+  padding-top: 1rem; // pt-4 в Tailwind
+}
+
+.carouselNext,
+.carouselPrev {
   position: absolute;
-  z-index: 1;
-  inset: 0;
+  padding: 2px;
+  background-color: rgb(51 51 51 / 34%);
 
-  border: none;
-  outline: none;
+  /* Скрыть кнопку, если она disabled */
+  &:disabled {
+    display: none;
+  }
 }
 
-.prevBtn,
-.nextBtn {
-  position: absolute;
-  z-index: 1;
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.top {
   top: 50%;
+}
+
+.bottom {
+  bottom: 50%;
+}
+
+.translate-y {
   transform: translateY(-50%);
-
-  display: flex;
-  justify-content: center;
-
-  width: 36px;
-  height: 36px;
-  padding: 0;
 }
 
-.prevBtn {
-  left: 12px;
+.translate-x {
+  transform: translateX(-50%);
 }
 
-.nextBtn {
-  right: 12px;
+.rotate-90 {
+  transform: rotate(90deg);
 }
 
 .icon {
-  width: var(--icon-size-m);
-  height: var(--icon-size-m);
+  width: var(--icon-size-l);
+  height: var(--icon-size-l);
+}
+
+.dotsContainer {
+  position: absolute;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+  padding: 8px;
+
+  background-color: rgb(51 51 51 / 34%);
+  border-radius: 2px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+
+  background-color: var(--color-light-100);
+  border-radius: 9999px;
+}
+
+.activeDot {
+  background-color: var(--color-accent-500);
+}
+
+.dots-left {
+  left: 50%;
+}
+
+.dots-right {
+  right: 2%;
+}
+
+.dots-bottom {
+  bottom: 2%;
+}
+
+.dots-top {
+  top: 50%;
 }

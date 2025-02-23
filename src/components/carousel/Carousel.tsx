@@ -265,8 +265,12 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 
 CarouselNext.displayName = 'CarouselNext'
 
-const CarouselDotButton = () => {
+const CarouselDotButtons = () => {
   const { onDotButtonClick, orientation, scrollSnaps, selectedIndex } = useCarousel()
+
+  if (scrollSnaps.length <= 1) {
+    return null
+  }
 
   return (
     <div
@@ -289,11 +293,12 @@ const CarouselDotButton = () => {
   )
 }
 
+/* eslint-disable max-lines */
 export {
   Carousel,
   type CarouselApi,
   CarouselContent,
-  CarouselDotButton,
+  CarouselDotButtons,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,

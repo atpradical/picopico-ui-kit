@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import {
   Carousel,
   CarouselContent,
-  CarouselDotButton,
+  CarouselDotButtons,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -49,7 +49,7 @@ export const DefaultStory: Story = {
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
-      <CarouselDotButton />
+      <CarouselDotButtons />
     </Carousel>
   ),
 }

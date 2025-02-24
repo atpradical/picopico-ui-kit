@@ -209,6 +209,7 @@ const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLD
 
 CarouselItem.displayName = 'CarouselItem'
 
+/* eslint-disable max-lines */
 const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
   ({ className, size = 'icon', variant = 'icon', ...props }, ref) => {
     const { canScrollPrev, orientation, scrollPrev } = useCarousel()
@@ -265,11 +266,22 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 
 CarouselNext.displayName = 'CarouselNext'
 
-const CarouselDotButtons = () => {
+type CarouselDotButtonProps = {
+  onClick?: () => void
+}
+
+const CarouselDotButtons = ({ onClick }: CarouselDotButtonProps) => {
   const { onDotButtonClick, orientation, scrollSnaps, selectedIndex } = useCarousel()
 
   if (scrollSnaps.length <= 1) {
     return null
+  }
+
+  const buttonHandler = (index: number) => {
+    if (onClick) {
+      onClick()
+    }
+    onDotButtonClick(index)
   }
 
   return (
@@ -285,7 +297,7 @@ const CarouselDotButtons = () => {
         <Button
           className={clsx(s.dot, index === selectedIndex && s.activeDot)}
           key={index}
-          onClick={() => onDotButtonClick(index)}
+          onClick={() => buttonHandler(index)}
           type={'button'}
         />
       ))}
@@ -293,7 +305,6 @@ const CarouselDotButtons = () => {
   )
 }
 
-/* eslint-disable max-lines */
 export {
   Carousel,
   type CarouselApi,

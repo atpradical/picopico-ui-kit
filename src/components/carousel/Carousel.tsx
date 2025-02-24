@@ -266,22 +266,11 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 
 CarouselNext.displayName = 'CarouselNext'
 
-type CarouselDotButtonProps = {
-  onClick?: () => void
-}
-
-const CarouselDotButtons = ({ onClick }: CarouselDotButtonProps) => {
+const CarouselDotButtons = () => {
   const { onDotButtonClick, orientation, scrollSnaps, selectedIndex } = useCarousel()
 
   if (scrollSnaps.length <= 1) {
     return null
-  }
-
-  const buttonHandler = (index: number) => {
-    if (onClick) {
-      onClick()
-    }
-    onDotButtonClick(index)
   }
 
   return (
@@ -297,7 +286,7 @@ const CarouselDotButtons = ({ onClick }: CarouselDotButtonProps) => {
         <Button
           className={clsx(s.dot, index === selectedIndex && s.activeDot)}
           key={index}
-          onClick={() => buttonHandler(index)}
+          onClick={() => onDotButtonClick(index)}
           type={'button'}
         />
       ))}

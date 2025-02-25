@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { useState } from 'react'
+
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 
 import { CloseOutlineIcon, MoreHorizontalIcon } from '../../icons'
@@ -38,10 +40,12 @@ type Story = StoryObj<typeof meta>
 
 export const Dialog: Story = {
   render: () => {
+    const [open, setOpen] = useState(true)
+
     return (
-      <DialogRoot open>
+      <DialogRoot onOpenChange={setOpen} open={open}>
         <Trigger />
-        <DialogContent withCloseButton>
+        <DialogContent>
           <Title />
           <Header />
           <Description />

@@ -47,16 +47,16 @@ const DialogContent = forwardRef<DialogContentRef, DialogContentProps>(
   ) => (
     <DialogPortal>
       <DialogOverlay className={overlayClassName} />
-      <RDXD.Content className={s.content} ref={ref} {...rest}>
+      <RDXD.Content className={clsx(s.content, className)} ref={ref} {...rest}>
         {withCloseButton ? (
           <div className={s.closeButtonWrapper} style={style}>
             <Button className={s.externalCloseButton} onClick={onClose} variant={'icon'}>
               <CloseOutlineIcon />
             </Button>
-            <Card className={clsx(s.cardWithCloseButton, className)}>{children}</Card>
+            <Card className={s.cardWithCloseButton}>{children}</Card>
           </div>
         ) : (
-          <Card className={clsx(s.card, noBorder && s.noBorder, className)} style={style}>
+          <Card className={clsx(s.card, noBorder && s.noBorder)} style={style}>
             {children}
           </Card>
         )}

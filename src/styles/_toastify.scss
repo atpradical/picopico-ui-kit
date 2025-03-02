@@ -9,13 +9,12 @@
 }
 
 .Toastify__toast {
-  width: 100%;
   max-width: 380px;
   margin: 5px;
   padding: 0;
+  border-radius: var(--border-radius-xs);
 
   background-color: transparent;
-  border-radius: var(--border-radius-xs);
 }
 
 .Toastify__toast-body {

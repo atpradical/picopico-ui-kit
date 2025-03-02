@@ -45,7 +45,7 @@ export const Dialog: Story = {
     return (
       <DialogRoot onOpenChange={setOpen} open={open}>
         <Trigger />
-        <DialogContent>
+        <DialogContent style={{ width: '380px' }}>
           <Title />
           <Header />
           <Description />

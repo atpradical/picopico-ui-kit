@@ -1,7 +1,7 @@
 {
   "name": "@atpradical/picopico-ui-kit",
   "private": false,
-  "version": "0.41.2",
+  "version": "0.42.0",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -31,6 +31,7 @@
     "@radix-ui/react-radio-group": "^1.2.1",
     "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-separator": "^1.1.2",
     "@radix-ui/react-slider": "^1.2.1",
     "@radix-ui/react-tabs": "^1.1.1",
     "@radix-ui/react-toggle": "^1.1.0",

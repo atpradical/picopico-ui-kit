@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { MoreHorizontalIcon } from '../../icons'
 import { Button } from '../button'
 import { Typography } from '../typography'
-import { Popover, PopoverContent, PopoverTrigger } from './Popover'
+import { Popover, PopoverArrow, PopoverContent, PopoverTrigger } from './Popover'
 
 const meta = {
   argTypes: {},
@@ -43,6 +43,7 @@ export const Default2: Story = {
           </Button>
         </PopoverTrigger>
         <PopoverContent>
+          <PopoverArrow style={{ fill: 'white' }} />
           <Button>Popover Content</Button>
           <Button>Popover Content</Button>
           <Button>Popover Content</Button>

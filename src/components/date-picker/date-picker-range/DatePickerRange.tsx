@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { DateRange, Locale, PropsRange } from 'react-day-picker'
 
 import { Button, Popover, Typography } from '@/components'
@@ -16,6 +17,7 @@ export type DatePickerRangeProps = {
   locale?: Locale
   onSelect: (date: DateRange | undefined) => void
   selected?: DateRange | undefined
+  width?: CSSProperties['width']
 } & Omit<PropsRange, 'mode'>
 
 export const DatePickerRange = ({
@@ -25,6 +27,7 @@ export const DatePickerRange = ({
   label,
   onSelect,
   selected,
+  width = '100%',
   ...rest
 }: DatePickerRangeProps) => {
   const { id, isOpen, setIsOpen, triggerIcon } = useDatePicker({
@@ -33,7 +36,7 @@ export const DatePickerRange = ({
   })
 
   return (
-    <div className={s.container}>
+    <div style={{ width }}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
         {label}
       </Typography>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
 import { PropsSingle } from 'react-day-picker'
 
 import { Button, Calendar, Popover, Typography, useDatePicker } from '@/components'
@@ -18,6 +18,7 @@ export type DatePickerProps = {
   localeString?: string
   onSelect: (date?: Date) => void
   selected?: Date | undefined
+  width?: CSSProperties['width']
 } & Omit<PropsSingle, 'mode'>
 
 export const DatePicker = ({
@@ -29,6 +30,7 @@ export const DatePicker = ({
   localeString,
   onSelect,
   selected,
+  width = '100%',
   ...rest
 }: DatePickerProps) => {
   const { id, isOpen, setIsOpen, triggerIcon } = useDatePicker({
@@ -48,7 +50,7 @@ export const DatePicker = ({
   const localeCode = localeString === 'ru' ? ru : enUS
 
   return (
-    <div className={s.container}>
+    <div style={{ width }}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
         {label}
       </Typography>

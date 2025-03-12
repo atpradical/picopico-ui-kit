@@ -36,7 +36,7 @@ export const DatePickerRange = ({
   })
 
   return (
-    <div style={{ width }}>
+    <div style={{ width: width }}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
         {label}
       </Typography>

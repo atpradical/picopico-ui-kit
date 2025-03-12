@@ -50,7 +50,7 @@ export const DatePicker = ({
   const localeCode = localeString === 'ru' ? ru : enUS
 
   return (
-    <div style={{ width }}>
+    <div style={{ width: width }}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
         {label}
       </Typography>

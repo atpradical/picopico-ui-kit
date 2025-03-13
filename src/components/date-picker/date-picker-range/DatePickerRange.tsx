@@ -16,6 +16,7 @@ export type DatePickerRangeProps = {
   label?: string
   locale?: Locale
   onSelect: (date: DateRange | undefined) => void
+  placeHolder?: string
   selected?: DateRange | undefined
 } & Omit<PropsRange, 'mode'>
 
@@ -26,6 +27,7 @@ export const DatePickerRange = ({
   isRequired,
   label,
   onSelect,
+  placeHolder = 'Pick a date',
   selected,
   ...rest
 }: DatePickerRangeProps) => {
@@ -42,7 +44,7 @@ export const DatePickerRange = ({
       <Popover modal onOpenChange={setIsOpen} open={isOpen}>
         <Trigger asChild className={s.trigger} disabled={disabled} title={'open calendar'}>
           <Button className={clsx(s.button, errorText && s.error)} id={id} variant={'icon'}>
-            {renderDateText(selected)}
+            {renderDateText(selected, placeHolder)}
             {triggerIcon}
           </Button>
         </Trigger>
@@ -59,7 +61,7 @@ export const DatePickerRange = ({
   )
 }
 
-const renderDateText = (selected: DateRange | undefined) => {
+const renderDateText = (selected: DateRange | undefined, placeHolder: string) => {
   if (selected?.from) {
     if (selected.to) {
       return (
@@ -72,5 +74,5 @@ const renderDateText = (selected: DateRange | undefined) => {
     return format(selected.from, 'P')
   }
 
-  return <span>Pick a date</span>
+  return <span>{placeHolder}</span>
 }

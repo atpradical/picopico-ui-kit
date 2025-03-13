@@ -18,6 +18,7 @@ export type DatePickerProps = {
   label?: string
   localeString?: string
   onSelect: (date?: Date) => void
+  placeHolder?: string
   selected?: Date | undefined
 } & Omit<PropsSingle, 'mode'>
 
@@ -30,6 +31,7 @@ export const DatePicker = ({
   label,
   localeString,
   onSelect,
+  placeHolder = ' Pick a date',
   selected,
   ...rest
 }: DatePickerProps) => {
@@ -57,7 +59,7 @@ export const DatePicker = ({
       <Popover onOpenChange={setIsOpen} open={isOpen}>
         <Trigger asChild className={s.trigger} disabled={disabled} title={'open calendar'}>
           <Button className={clsx(s.button, errorText && s.error)} id={id} variant={'icon'}>
-            {selected ? format(selected, 'P', { locale: localeCode }) : <span>Pick a date</span>}
+            {selected ? format(selected, 'P', { locale: localeCode }) : <span>{placeHolder}</span>}
             {triggerIcon}
           </Button>
         </Trigger>

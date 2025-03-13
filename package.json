@@ -1,7 +1,7 @@
 {
   "name": "@atpradical/picopico-ui-kit",
   "private": false,
-  "version": "0.42.8",
+  "version": "0.43.0",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -45,7 +45,8 @@
     "react": "^18.3.1",
     "react-day-picker": "^9.1.0",
     "react-dom": "^18.3.1",
-    "react-toastify": "^10.0.6"
+    "react-toastify": "^10.0.6",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "1.9.0",

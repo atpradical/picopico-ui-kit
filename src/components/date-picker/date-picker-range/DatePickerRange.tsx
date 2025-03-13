@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react'
 import { DateRange, Locale, PropsRange } from 'react-day-picker'
 
 import { Button, Popover, Typography } from '@/components'
@@ -10,6 +9,7 @@ import { format } from 'date-fns'
 import s from '../date-picker-single/DatePicker.module.scss'
 
 export type DatePickerRangeProps = {
+  classNameContainer?: string
   disabled?: boolean
   errorText?: string
   isRequired?: boolean
@@ -17,17 +17,16 @@ export type DatePickerRangeProps = {
   locale?: Locale
   onSelect: (date: DateRange | undefined) => void
   selected?: DateRange | undefined
-  width?: CSSProperties['width']
 } & Omit<PropsRange, 'mode'>
 
 export const DatePickerRange = ({
+  classNameContainer,
   disabled,
   errorText,
   isRequired,
   label,
   onSelect,
   selected,
-  width = '100%',
   ...rest
 }: DatePickerRangeProps) => {
   const { id, isOpen, setIsOpen, triggerIcon } = useDatePicker({
@@ -36,11 +35,11 @@ export const DatePickerRange = ({
   })
 
   return (
-    <div style={{ width: width }}>
+    <div className={clsx(s.conatainer, classNameContainer)}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
         {label}
       </Typography>
-      <Popover onOpenChange={setIsOpen} open={isOpen}>
+      <Popover modal onOpenChange={setIsOpen} open={isOpen}>
         <Trigger asChild className={s.trigger} disabled={disabled} title={'open calendar'}>
           <Button className={clsx(s.button, errorText && s.error)} id={id} variant={'icon'}>
             {renderDateText(selected)}

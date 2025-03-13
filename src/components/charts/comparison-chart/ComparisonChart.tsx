@@ -10,6 +10,7 @@ import s from './ComparisonChart.module.scss'
 type Props<T> = {
   chartTitle: string
   data: T[]
+  datePickerPlaceholder?: string
   onDateSelect: (date: DateRange | undefined) => void
   primaryLegendText: string
   primaryLineColor: string
@@ -21,6 +22,7 @@ type Props<T> = {
 const ComparisonChart = <T,>({
   chartTitle,
   data,
+  datePickerPlaceholder,
   onDateSelect,
   primaryLegendText,
   primaryLineColor,
@@ -62,6 +64,7 @@ const ComparisonChart = <T,>({
         <DatePickerRange
           classNameContainer={s.dateRangeContainer}
           onSelect={onDateSelect}
+          placeHolder={datePickerPlaceholder}
           selected={selectedDate}
         />
       </div>

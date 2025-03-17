@@ -18,6 +18,7 @@ export type TextFieldProps = {
   errorText?: string
   isRequired?: boolean
   label?: string
+  onClear?: () => void
   variant?: 'password' | 'search' | 'text'
 } & ComponentPropsWithoutRef<'input'>
 
@@ -31,6 +32,7 @@ export const TextField = forwardRef<TextFieldRef, TextFieldProps>((props, ref) =
     isRequired = false,
     label,
     onChange,
+    onClear,
     placeholder,
     value,
     variant = 'text',
@@ -51,6 +53,7 @@ export const TextField = forwardRef<TextFieldRef, TextFieldProps>((props, ref) =
 
   const clearInputHandler = () => {
     setInputValue('')
+    onClear?.()
   }
 
   const showPasswordHandler = () => {

@@ -25,9 +25,12 @@
   border: var(--border-size-standard) solid var(--color-dark-500);
 
   &:hover {
-    // Применяем стили ко всем ячейкам, кроме <th>
-    :not(th) {
+    td {
       background-color: rgb(35 78 153 / 20%);
+
+      > * {
+        background-color: transparent;
+      }
     }
   }
 }

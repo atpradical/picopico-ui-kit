@@ -8,8 +8,33 @@
   font-weight: var(--font-weight-semi-bold);
 }
 
+.sortIconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sortIcon {
+  width: 8px;
+  height: 6px;
+  color: var(--color-dark-100);
+}
+
 .cell {
   font-weight: var(--font-weight-regular);
+}
+
+.activeSort {
+  color: var(--color-warning-500);
+}
+
+.headerCellContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .tableHead,
@@ -36,13 +61,24 @@
 }
 
 .left {
+  justify-content: flex-start;
   text-align: left;
 }
 
 .center {
+  justify-content: center;
   text-align: center;
 }
 
 .right {
+  justify-content: flex-end;
   text-align: right;
 }
+
+.highLight {
+  &:hover {
+    background-color: var(--color-dark-700)
+  }
+}
+
+

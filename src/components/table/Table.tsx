@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from 'react'
 
+import { SortDownIcon, SortUpIcon } from '@/icons'
 import clsx from 'clsx'
 
 import s from './Table.module.scss'
@@ -37,18 +38,51 @@ const TableRow = forwardRef<TableHeadRef, TableRowProps>(({ className, ...props 
 })
 
 type TableHeadProps = {
+  onSort?: () => void
+  sortOrder?: 'asc' | 'desc'
+  sortable?: boolean
   textAlign?: 'center' | 'left' | 'right'
 } & ComponentPropsWithoutRef<'th'>
 type TableRowRef = ElementRef<'th'>
 
 const TableHead = forwardRef<TableRowRef, TableHeadProps>(
-  ({ className, textAlign = 'center', ...props }, ref) => {
+  (
+    {
+      children,
+      className,
+      onSort,
+      sortOrder = 'asc',
+      sortable = false,
+      textAlign = 'center',
+      ...props
+    },
+    ref
+  ) => {
+    const sortHandler = () => {
+      if (onSort) {
+        onSort()
+      }
+    }
+
     return (
       <th
-        className={clsx(s.tableHead, textAlign && s[textAlign], className)}
+        className={clsx(s.tableHead, textAlign && s[textAlign], sortable && s.highLight, className)}
         {...props}
         ref={ref}
-      />
+      >
+        <div
+          className={clsx(s.headerCellContainer, textAlign && s[textAlign])}
+          onClick={sortHandler}
+        >
+          {children}
+          {sortable && (
+            <div className={s.sortIconContainer}>
+              <SortUpIcon className={clsx(s.sortIcon, sortOrder === 'asc' && s.activeSort)} />
+              <SortDownIcon className={clsx(s.sortIcon, sortOrder === 'desc' && s.activeSort)} />
+            </div>
+          )}
+        </div>
+      </th>
     )
   }
 )

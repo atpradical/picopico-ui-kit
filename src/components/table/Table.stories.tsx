@@ -40,9 +40,11 @@ export const Default: Story = {
     <Table {...args}>
       <TableHeader>
         <TableRow>
-          <TableHead>Date of Payment</TableHead>
+          <TableHead sortable>Date of Payment</TableHead>
           <TableHead>End date of subscription</TableHead>
-          <TableHead>Price</TableHead>
+          <TableHead sortOrder={'desc'} sortable>
+            Price
+          </TableHead>
           <TableHead>Subscription Type</TableHead>
           <TableHead>Payment Type</TableHead>
         </TableRow>

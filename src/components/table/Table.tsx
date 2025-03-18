@@ -39,7 +39,7 @@ const TableRow = forwardRef<TableHeadRef, TableRowProps>(({ className, ...props 
 
 type TableHeadProps = {
   onSort?: () => void
-  sortOrder?: 'asc' | 'desc'
+  sortOrder?: '' | 'asc' | 'desc'
   sortable?: boolean
   textAlign?: 'center' | 'left' | 'right'
 } & ComponentPropsWithoutRef<'th'>
@@ -51,7 +51,7 @@ const TableHead = forwardRef<TableRowRef, TableHeadProps>(
       children,
       className,
       onSort,
-      sortOrder = 'asc',
+      sortOrder = '',
       sortable = false,
       textAlign = 'center',
       ...props
@@ -75,7 +75,7 @@ const TableHead = forwardRef<TableRowRef, TableHeadProps>(
           onClick={sortHandler}
         >
           {children}
-          {sortable && (
+          {sortable && sortOrder && (
             <div className={s.sortIconContainer}>
               <SortUpIcon className={clsx(s.sortIcon, sortOrder === 'asc' && s.activeSort)} />
               <SortDownIcon className={clsx(s.sortIcon, sortOrder === 'desc' && s.activeSort)} />

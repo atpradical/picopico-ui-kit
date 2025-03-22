@@ -14,11 +14,11 @@
   width: 100%;
   height: var(--select-height-standard);
   padding: var(--padding-select-standard);
+  border: var(--border-size-standard) solid var(--color-dark-100);
 
   text-align: center;
 
   background-color: var(--color-dark-700);
-  border: var(--border-size-standard) solid var(--color-dark-100);
 
   &[data-state='open'] .icon {
     transform: rotate(180deg);
@@ -47,10 +47,10 @@
 .content {
   width: var(--radix-select-trigger-width);
   max-height: 200px;
-
-  background: var(--color-dark-900);
   border: var(--border-size-standard) solid var(--color-dark-300);
   border-top: none;
+
+  background: var(--color-dark-900);
 
   animation: fade-in 0.5s ease;
 }
@@ -101,5 +101,7 @@
 }
 
 .scrollAreaRoot {
+  width: 100%;
   height: 200px;
+
 }

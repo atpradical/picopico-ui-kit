@@ -60,12 +60,12 @@ export const CalendarSelect = ({ onChange, options, value }: CalendarSelectProps
         </RDXS.Trigger>
         <RDXS.Portal>
           <RDXS.Content className={s.content} position={'popper'}>
-            <ScrollArea className={s.scrollAreaRoot}>
-              <RDXS.Viewport>
+            <RDXS.Viewport>
+              <ScrollArea className={s.scrollAreaRoot} type={'scroll'}>
                 <RDXS.SelectGroup>{mappedOptions}</RDXS.SelectGroup>
-              </RDXS.Viewport>
-              <ScrollBar />
-            </ScrollArea>
+                <ScrollBar />
+              </ScrollArea>
+            </RDXS.Viewport>
           </RDXS.Content>
         </RDXS.Portal>
       </RDXS.Root>

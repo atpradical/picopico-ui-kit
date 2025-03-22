@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { PropsSingle } from 'react-day-picker'
 
 import { Button, Calendar, Popover, Typography, useDatePicker } from '@/components'
@@ -51,6 +51,14 @@ export const DatePicker = ({
 
   const localeCode = localeString === 'ru' ? ru : enUS
 
+  const selectDateAndClosePopover = useCallback(
+    (date?: Date) => {
+      onSelect(date)
+      setIsOpen(false)
+    },
+    [onSelect, setIsOpen]
+  )
+
   return (
     <div className={clsx(s.conatainer, classNameContainer)}>
       <Typography as={'label'} grey htmlFor={id} isRequired={isRequired} variant={'regular_14'}>
@@ -70,7 +78,7 @@ export const DatePicker = ({
             mode={'single'}
             month={month} // Управляем текущим месяцем
             onMonthChange={setMonth} // Обновляем месяц при изменении
-            onSelect={onSelect}
+            onSelect={selectDateAndClosePopover}
             selected={selected}
             {...rest}
           />
